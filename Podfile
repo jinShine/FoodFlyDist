@@ -8,7 +8,7 @@ target 'FoodFlyDist' do
   # Pods for FoodFlyDist
 
   # Network
-  pod 'Moya', '~> 13.0'
+  pod 'Alamofire', '~> 4.7'
 
   target 'FoodFlyDistTests' do
     inherit! :search_paths

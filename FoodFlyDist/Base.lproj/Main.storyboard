@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +675,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="FoodFlyDist" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -703,15 +705,95 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="FoodFlyDist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="634" height="735"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FiT-CT-NDR">
+                                <rect key="frame" x="583" y="702" width="37" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="JxH-Y0-Ehv">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="LZv-h2-Zud">
+                                <rect key="frame" x="565" y="705" width="12" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="12" id="3zi-cF-pAV"/>
+                                    <constraint firstAttribute="height" constant="12" id="Dpb-Ff-Vuw"/>
+                                </constraints>
+                            </customView>
+                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heU-Og-CyL">
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="735"/>
+                                <clipView key="contentView" id="QI4-OA-4ze">
+                                    <rect key="frame" x="1" y="1" width="248" height="733"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView id="YSG-5H-jAB">
+                                            <rect key="frame" x="0.0" y="0.0" width="248" height="158"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="lMw-8H-exi">
+                                                <size key="itemSize" width="50" height="50"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </collectionView>
+                                    </subviews>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="5OE-u3-NKP"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="CtL-AU-nx1">
+                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Vrp-SS-9Rk">
+                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bfR-dd-i4x">
+                                <rect key="frame" x="410" y="180" width="81" height="32"/>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QUU-vB-LaU">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="fileUpload:" target="XfG-lQ-9wD" id="tby-op-UC7"/>
+                                </connections>
+                            </button>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="XaU-ip-2Rx" customClass="DropView" customModule="FoodFlyDist" customModuleProvider="target">
+                                <rect key="frame" x="350" y="258" width="200" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="nhI-fN-2oP"/>
+                                    <constraint firstAttribute="height" constant="220" id="q8O-fa-B8q"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="XaU-ip-2Rx" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="34C-m6-ZLt"/>
+                            <constraint firstItem="heU-Og-CyL" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Fm2-5b-7Z0"/>
+                            <constraint firstItem="FiT-CT-NDR" firstAttribute="leading" secondItem="LZv-h2-Zud" secondAttribute="trailing" constant="8" id="Vw6-LV-UNn"/>
+                            <constraint firstItem="XaU-ip-2Rx" firstAttribute="leading" secondItem="heU-Og-CyL" secondAttribute="trailing" constant="100" id="a1E-Mp-oCu"/>
+                            <constraint firstItem="bfR-dd-i4x" firstAttribute="centerX" secondItem="XaU-ip-2Rx" secondAttribute="centerX" id="hLa-Pd-ihH"/>
+                            <constraint firstItem="FiT-CT-NDR" firstAttribute="centerY" secondItem="LZv-h2-Zud" secondAttribute="centerY" id="hdc-jM-hYK"/>
+                            <constraint firstItem="bfR-dd-i4x" firstAttribute="top" secondItem="XaU-ip-2Rx" secondAttribute="bottom" constant="50" id="rDp-oZ-L39"/>
+                            <constraint firstItem="heU-Og-CyL" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="shF-Tn-Z5Q"/>
+                            <constraint firstAttribute="bottom" secondItem="heU-Og-CyL" secondAttribute="bottom" id="uEO-Fg-Uy7"/>
+                            <constraint firstItem="FiT-CT-NDR" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="16" id="vIF-ro-JSr"/>
+                            <constraint firstAttribute="trailing" secondItem="FiT-CT-NDR" secondAttribute="trailing" constant="16" id="yKf-iX-URh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dropView" destination="XaU-ip-2Rx" id="yAQ-fR-U0A"/>
+                        <outlet property="serviceStatusLabel" destination="FiT-CT-NDR" id="WNy-JQ-P9t"/>
+                        <outlet property="serviceStatusView" destination="LZv-h2-Zud" id="7lC-uy-NTS"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="902"/>
         </scene>
     </scenes>
 </document>
