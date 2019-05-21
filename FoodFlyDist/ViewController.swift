@@ -10,10 +10,34 @@ import Cocoa
 
 class ViewController: NSViewController {
     
+    /*
+     선택
+     */
+    @IBOutlet weak var choiceRiderContainer: NSView!
+    @IBOutlet weak var choiceTitle: NSTextField!
+    @IBOutlet weak var choiceDevBackground: NSView!
+    @IBOutlet weak var choiceDevTitle: NSTextField!
+    @IBOutlet weak var choiceProBackground: NSView!
+    @IBOutlet weak var choiceProTitle: NSTextField!
+    
+    /*
+     자동
+     */
+    @IBOutlet weak var autoRiderContainer: NSView!
+    @IBOutlet weak var autoTitle: NSTextField!
+    @IBOutlet weak var autoDevBackground: NSView!
+    @IBOutlet weak var autoDevTitle: NSTextField!
+    @IBOutlet weak var autoProBackground: NSView!
+    @IBOutlet weak var autoProTitle: NSTextField!
+    
+    
+    
     
     @IBOutlet weak var serviceStatusView: NSView!
     @IBOutlet weak var serviceStatusLabel: NSTextField!
     @IBOutlet weak var dropView: DropView!
+    
+    
     
     var serviceStatus: ServiceState = .failed
     let service: FFDService = FFDService()
@@ -21,13 +45,48 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.wantsLayer = true
+        view.layer?.backgroundColor = NSColor.RGBHex(hexValue: 0x444444).cgColor
+        
+        choiceRiderContainer.wantsLayer = true
+        choiceRiderContainer.layer?.backgroundColor = .white
+        choiceRiderContainer.layer?.cornerRadius = 10
+        
+        choiceTitle.wantsLayer = true
+        choiceTitle.textColor = .black
+        
+        choiceDevBackground.wantsLayer = true
+        choiceDevBackground.layer?.backgroundColor = NSColor.RGBHex(hexValue: 0xDDDDDD).cgColor
+        
+        choiceProBackground.wantsLayer = true
+        choiceProBackground.layer?.backgroundColor = NSColor.RGBHex(hexValue: 0xDDDDDD).cgColor
+        
+        
+        
+        
+        
+        autoRiderContainer.wantsLayer = true
+        autoRiderContainer.layer?.backgroundColor = .white
+        autoRiderContainer.layer?.cornerRadius = 10
+        
+        autoTitle.wantsLayer = true
+        autoTitle.textColor = .black
+        
+        autoDevBackground.wantsLayer = true
+        autoDevBackground.layer?.backgroundColor = NSColor.RGBHex(hexValue: 0xDDDDDD).cgColor
+        
+        autoProBackground.wantsLayer = true
+        autoProBackground.layer?.backgroundColor = NSColor.RGBHex(hexValue: 0xDDDDDD).cgColor
+        
+        
+        
+        
     }
     
     override func viewWillAppear() {
         super.viewWillAppear()
         
         service.pingCheck(completion: changeStatus)
-        
     }
 
     override var representedObject: Any? {
