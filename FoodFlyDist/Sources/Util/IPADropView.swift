@@ -28,7 +28,6 @@ class IPADropView: NSView {
     
     
     // Property
-    
     public var filePath: String?
     public var expectedExt = ["ipa"] {
         didSet(extensions) {
@@ -41,7 +40,7 @@ class IPADropView: NSView {
     }
     public var title: String? {
         get { return _title.stringValue }
-        set (newValue) { _title.stringValue = newValue! }
+        set (newValue) { _title.stringValue = newValue ?? "" }
     }
     
     required init?(coder decoder: NSCoder) {
@@ -101,7 +100,9 @@ class IPADropView: NSView {
         guard let pasteboard = sender.draggingPasteboard.propertyList(forType: NSPasteboard.PasteboardType(rawValue: "NSFilenamesPboardType")) as? NSArray,
             let path = pasteboard[0] as? String
             else { return false }
-
+        
+        
+        NotificationCenter.default.post(name: NSNotification.Name("DropFilePath"), object: nil, userInfo: ["FilePath" : path])
         self._imageView.image = NSImage(named: "ipa-file-upload")
         self.filePath = path
         Swift.print("FilePath: \(path)")

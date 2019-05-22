@@ -9,6 +9,9 @@ target 'FoodFlyDist' do
 
   # Network
   pod 'Alamofire', '~> 4.7'
+  
+  # Util
+  pod 'SSZipArchive'
 
   target 'FoodFlyDistTests' do
     inherit! :search_paths

@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SSZipArchive
 
 class ViewController: NSViewController {
     
@@ -61,8 +62,13 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        detailInfoViewHeight.constant = 0
         setupUI()
+//        choiceDevIPAView.delegate = self
+        detailInfoViewHeight.constant = 0
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(getDropFilePath), name: NSNotification.Name("DropFilePath"), object: nil)
+        
+        
         
     }
     
@@ -79,6 +85,9 @@ class ViewController: NSViewController {
     }
     
     @IBAction func fileUpload(_ sender: NSButton) {
+        
+        
+        
 //        do {
 //            let fileUrl = URL(fileURLWithPath: dropView.filePath ?? "")
 //            let fileData = try Data(contentsOf: fileUrl)
@@ -92,14 +101,9 @@ class ViewController: NSViewController {
 //        }
 //        sender.
         
-        detailInfoView.wantsLayer = true
-        detailInfoView.layer?.backgroundColor = NSColor.white.cgColor
-        detailInfoView.layer?.cornerRadius = 10
         
-        NSAnimationContext.runAnimationGroup { _ in
-            NSAnimationContext.current.duration = 5.0
-            detailInfoViewHeight.constant = 200
-        }
+        
+
     }
 }
 
@@ -155,6 +159,17 @@ extension ViewController {
         autoProAPKView.image = NSImage(named: "apk-file")
         autoProAPKView.title = "apk파일 끌어넣기"
     }
+    
+    private func setupDetailInfoView() {
+        detailInfoView.wantsLayer = true
+        detailInfoView.layer?.backgroundColor = NSColor.white.cgColor
+        detailInfoView.layer?.cornerRadius = 10
+        
+        NSAnimationContext.runAnimationGroup { _ in
+            NSAnimationContext.current.duration = 5.0
+            detailInfoViewHeight.constant = 200
+        }
+    }
 
     private func changeStatus(_ result: Bool, _ ping: SwiftyPing?) -> () {
         if result {
@@ -180,5 +195,38 @@ extension ViewController {
         }
     }
     
-}
+    @objc private func getDropFilePath(noti: Notification) {
+        setupDetailInfoView()
+        guard let userInfo = noti.userInfo,
+        let filePath = userInfo["FilePath"] as? String else { return }
 
+        let unZipPath = tempUnZipPath(from: filePath)
+        print(unZipPath)
+
+        //////////////////////
+        
+        let success: Bool = SSZipArchive.unzipFile(atPath: filePath, toDestination: filePath)
+        if success {
+            print("Success zip")
+        } else {
+            print("Error!!!!!!!")
+        }
+        
+    }
+    
+    func tempUnZipPath(from filePath: String) -> String {
+        print("1",filePath)
+        let fileURLPath = URL(fileURLWithPath: filePath).deletingLastPathComponent()
+        print("2",try? String(contentsOf: fileURLPath, encoding: .utf8))
+//        var path: String = try! String(contentsOf: fileURLPath, encoding: .utf8)
+//        do {
+//
+//            print(fileURLPath)
+//
+//            path = try String(contentsOf: fileURLPath, encoding: .utf8)
+//        } catch {
+//            print("UnZipPath Error")
+//        }
+        return fileURLPath.absoluteString
+    }
+}

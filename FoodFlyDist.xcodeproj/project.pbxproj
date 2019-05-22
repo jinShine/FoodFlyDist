@@ -189,9 +189,9 @@
 			isa = PBXGroup;
 			children = (
 				5C98F94622950D000083AB45 /* IPADropView.swift */,
+				5C98F94822950D1E0083AB45 /* APKDropView.swift */,
 				5C98F92C229263E00083AB45 /* SwiftyPing.swift */,
 				5C98F9442293F5E00083AB45 /* UIColor+Extension.swift */,
-				5C98F94822950D1E0083AB45 /* APKDropView.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -260,7 +260,7 @@
 						CreatedOnToolsVersion = 10.2;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -319,12 +319,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FoodFlyDist/Pods-FoodFlyDist-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -547,7 +549,6 @@
 			baseConfigurationReference = 64CA275B98ED0D7B6DBC6424 /* Pods-FoodFlyDist.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = FoodFlyDist/FoodFlyDist.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -570,7 +571,6 @@
 			baseConfigurationReference = DE1942AEB5CCF9127F17579F /* Pods-FoodFlyDist.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = FoodFlyDist/FoodFlyDist.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
