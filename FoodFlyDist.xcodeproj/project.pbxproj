@@ -18,10 +18,11 @@
 		5C98F92A229252B80083AB45 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98F929229252B80083AB45 /* API.swift */; };
 		5C98F92D229263E00083AB45 /* SwiftyPing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98F92C229263E00083AB45 /* SwiftyPing.swift */; };
 		5C98F93022926F330083AB45 /* ServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98F92F22926F330083AB45 /* ServiceState.swift */; };
-		5C98F93322927E930083AB45 /* DropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98F93222927E930083AB45 /* DropView.swift */; };
 		5C98F93522929FDC0083AB45 /* FFDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98F93422929FDC0083AB45 /* FFDService.swift */; };
 		5C98F9392292B2E90083AB45 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98F9382292B2E90083AB45 /* TargetType.swift */; };
 		5C98F9452293F5E00083AB45 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98F9442293F5E00083AB45 /* UIColor+Extension.swift */; };
+		5C98F94722950D000083AB45 /* IPADropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98F94622950D000083AB45 /* IPADropView.swift */; };
+		5C98F94922950D1E0083AB45 /* APKDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98F94822950D1E0083AB45 /* APKDropView.swift */; };
 		95E3886AAB176BCB7E97E42F /* Pods_FoodFlyDist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA29E8DAD0AA129C56B51F9 /* Pods_FoodFlyDist.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,10 +54,11 @@
 		5C98F929229252B80083AB45 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		5C98F92C229263E00083AB45 /* SwiftyPing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyPing.swift; sourceTree = "<group>"; };
 		5C98F92F22926F330083AB45 /* ServiceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceState.swift; sourceTree = "<group>"; };
-		5C98F93222927E930083AB45 /* DropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropView.swift; sourceTree = "<group>"; };
 		5C98F93422929FDC0083AB45 /* FFDService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFDService.swift; sourceTree = "<group>"; };
 		5C98F9382292B2E90083AB45 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		5C98F9442293F5E00083AB45 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		5C98F94622950D000083AB45 /* IPADropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPADropView.swift; sourceTree = "<group>"; };
+		5C98F94822950D1E0083AB45 /* APKDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APKDropView.swift; sourceTree = "<group>"; };
 		64CA275B98ED0D7B6DBC6424 /* Pods-FoodFlyDist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodFlyDist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodFlyDist/Pods-FoodFlyDist.debug.xcconfig"; sourceTree = "<group>"; };
 		7960E9164339F0BA5DC95CF4 /* Pods-FoodFlyDistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodFlyDistTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodFlyDistTests/Pods-FoodFlyDistTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ADA29E8DAD0AA129C56B51F9 /* Pods_FoodFlyDist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodFlyDist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,9 +188,10 @@
 		5C98F92B229263C00083AB45 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				5C98F94622950D000083AB45 /* IPADropView.swift */,
 				5C98F92C229263E00083AB45 /* SwiftyPing.swift */,
-				5C98F93222927E930083AB45 /* DropView.swift */,
 				5C98F9442293F5E00083AB45 /* UIColor+Extension.swift */,
+				5C98F94822950D1E0083AB45 /* APKDropView.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -383,13 +386,14 @@
 				5C896F6E22923A9300C035B2 /* ViewController.swift in Sources */,
 				5C896F6C22923A9300C035B2 /* AppDelegate.swift in Sources */,
 				5C98F9452293F5E00083AB45 /* UIColor+Extension.swift in Sources */,
+				5C98F94922950D1E0083AB45 /* APKDropView.swift in Sources */,
 				5C98F92D229263E00083AB45 /* SwiftyPing.swift in Sources */,
 				5C98F9272292526E0083AB45 /* App.swift in Sources */,
 				5C98F92A229252B80083AB45 /* API.swift in Sources */,
 				5C896F8D22924E0E00C035B2 /* FFDServiceType.swift in Sources */,
+				5C98F94722950D000083AB45 /* IPADropView.swift in Sources */,
 				5C98F93022926F330083AB45 /* ServiceState.swift in Sources */,
 				5C98F93522929FDC0083AB45 /* FFDService.swift in Sources */,
-				5C98F93322927E930083AB45 /* DropView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

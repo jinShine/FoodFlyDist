@@ -707,11 +707,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="FoodFlyDist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="750" height="1059"/>
+                        <rect key="frame" x="0.0" y="0.0" width="750" height="946"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FiT-CT-NDR">
-                                <rect key="frame" x="699" y="1026" width="37" height="17"/>
+                                <rect key="frame" x="699" y="913" width="37" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="JxH-Y0-Ehv">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -719,14 +719,14 @@
                                 </textFieldCell>
                             </textField>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="LZv-h2-Zud">
-                                <rect key="frame" x="681" y="1029" width="12" height="12"/>
+                                <rect key="frame" x="681" y="916" width="12" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="12" id="3zi-cF-pAV"/>
                                     <constraint firstAttribute="height" constant="12" id="Dpb-Ff-Vuw"/>
                                 </constraints>
                             </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h9H-Y0-7RL">
-                                <rect key="frame" x="-2" y="943" width="754" height="86"/>
+                                <rect key="frame" x="-2" y="830" width="754" height="86"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" allowsEditingTextAttributes="YES" id="3w8-xf-dCw">
                                     <font key="font" size="30" name="AppleSDGothicNeo-ExtraBold"/>
                                     <string key="title">FLY&amp;COMPANY
@@ -736,7 +736,7 @@ DOWNLOAD CENTER</string>
                                 </textFieldCell>
                             </textField>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="yH5-O6-rWg">
-                                <rect key="frame" x="50" y="364" width="300" height="529"/>
+                                <rect key="frame" x="50" y="251" width="300" height="529"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O3V-2z-nAN">
                                         <rect key="frame" x="125" y="449" width="50" height="50"/>
@@ -747,7 +747,7 @@ DOWNLOAD CENTER</string>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Rider-Logo" id="jkW-gs-SVm"/>
                                     </imageView>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SH8-NN-khs">
-                                        <rect key="frame" x="48" y="405" width="204" height="29"/>
+                                        <rect key="frame" x="-2" y="405" width="304" height="29"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="선택 배차" id="luk-Hi-CbL">
                                             <font key="font" size="20" name="AppleSDGothicNeo-Bold"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -772,19 +772,19 @@ DOWNLOAD CENTER</string>
                                             <constraint firstAttribute="height" constant="35" id="qwb-Nz-qrA"/>
                                         </constraints>
                                     </customView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="XaU-ip-2Rx" customClass="DropView" customModule="FoodFlyDist" customModuleProvider="target">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="XaU-ip-2Rx" customClass="IPADropView" customModule="FoodFlyDist" customModuleProvider="target">
                                         <rect key="frame" x="20" y="215" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="XaU-ip-2Rx" secondAttribute="height" multiplier="1:1" id="bLQ-Y1-xXw"/>
                                         </constraints>
                                     </customView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="IPO-fs-Pva" customClass="DropView" customModule="FoodFlyDist" customModuleProvider="target">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="IPO-fs-Pva" customClass="IPADropView" customModule="FoodFlyDist" customModuleProvider="target">
                                         <rect key="frame" x="20" y="20" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="IPO-fs-Pva" secondAttribute="height" multiplier="1:1" id="GoX-0D-mUY"/>
                                         </constraints>
                                     </customView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Mu5-2q-Pdq" customClass="DropView" customModule="FoodFlyDist" customModuleProvider="target">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Mu5-2q-Pdq" customClass="APKDropView" customModule="FoodFlyDist" customModuleProvider="target">
                                         <rect key="frame" x="160" y="215" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Mu5-2q-Pdq" secondAttribute="height" multiplier="1:1" id="bro-GW-Vqb"/>
@@ -808,7 +808,7 @@ DOWNLOAD CENTER</string>
                                             <constraint firstItem="mnN-OC-sPq" firstAttribute="centerX" secondItem="pvy-jQ-6Pg" secondAttribute="centerX" id="zbk-id-Sdf"/>
                                         </constraints>
                                     </customView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="EJ2-IO-CDr" customClass="DropView" customModule="FoodFlyDist" customModuleProvider="target">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="EJ2-IO-CDr" customClass="APKDropView" customModule="FoodFlyDist" customModuleProvider="target">
                                         <rect key="frame" x="160" y="20" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="EJ2-IO-CDr" secondAttribute="height" multiplier="1:1" id="Xgk-si-e4F"/>
@@ -829,7 +829,7 @@ DOWNLOAD CENTER</string>
                                     <constraint firstItem="EJ2-IO-CDr" firstAttribute="top" secondItem="pvy-jQ-6Pg" secondAttribute="bottom" constant="20" id="SfE-5R-5jJ"/>
                                     <constraint firstItem="XaU-ip-2Rx" firstAttribute="width" secondItem="yH5-O6-rWg" secondAttribute="width" multiplier="1/2" constant="-30" id="Umd-3M-yha"/>
                                     <constraint firstItem="O3V-2z-nAN" firstAttribute="centerX" secondItem="yH5-O6-rWg" secondAttribute="centerX" id="WKk-ej-4RG"/>
-                                    <constraint firstItem="SH8-NN-khs" firstAttribute="leading" secondItem="yH5-O6-rWg" secondAttribute="leading" constant="50" id="WzD-Zj-qT7"/>
+                                    <constraint firstItem="SH8-NN-khs" firstAttribute="leading" secondItem="yH5-O6-rWg" secondAttribute="leading" id="WzD-Zj-qT7"/>
                                     <constraint firstItem="pvy-jQ-6Pg" firstAttribute="leading" secondItem="yH5-O6-rWg" secondAttribute="leading" id="YzO-bI-TV4"/>
                                     <constraint firstItem="Mu5-2q-Pdq" firstAttribute="leading" secondItem="XaU-ip-2Rx" secondAttribute="trailing" constant="20" id="e4g-sR-WEC"/>
                                     <constraint firstItem="EJ2-IO-CDr" firstAttribute="width" secondItem="yH5-O6-rWg" secondAttribute="width" multiplier="1/2" constant="-30" id="hc9-GC-N8J"/>
@@ -839,7 +839,7 @@ DOWNLOAD CENTER</string>
                                     <constraint firstAttribute="bottom" secondItem="EJ2-IO-CDr" secondAttribute="bottom" constant="20" id="miz-vP-TeE"/>
                                     <constraint firstItem="XaU-ip-2Rx" firstAttribute="top" secondItem="yd0-K6-fF9" secondAttribute="bottom" constant="20" id="nhM-3m-kbY"/>
                                     <constraint firstItem="Mu5-2q-Pdq" firstAttribute="width" secondItem="yH5-O6-rWg" secondAttribute="width" multiplier="1/2" constant="-30" id="otW-Db-f3O"/>
-                                    <constraint firstAttribute="trailing" secondItem="SH8-NN-khs" secondAttribute="trailing" constant="50" id="snP-uT-nns"/>
+                                    <constraint firstAttribute="trailing" secondItem="SH8-NN-khs" secondAttribute="trailing" id="snP-uT-nns"/>
                                     <constraint firstItem="IPO-fs-Pva" firstAttribute="top" secondItem="pvy-jQ-6Pg" secondAttribute="bottom" constant="20" id="yLI-R9-VkR"/>
                                     <constraint firstAttribute="width" constant="300" id="z4l-HE-WJu"/>
                                     <constraint firstItem="XaU-ip-2Rx" firstAttribute="leading" secondItem="yH5-O6-rWg" secondAttribute="leading" constant="20" id="zv0-ZO-AP2"/>
@@ -847,7 +847,7 @@ DOWNLOAD CENTER</string>
                                 </constraints>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="klE-Yx-hFO">
-                                <rect key="frame" x="400" y="364" width="300" height="529"/>
+                                <rect key="frame" x="400" y="251" width="300" height="529"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Sp-RY-yHR">
                                         <rect key="frame" x="125" y="449" width="50" height="50"/>
@@ -858,7 +858,7 @@ DOWNLOAD CENTER</string>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Rider-Logo" id="2TQ-Cw-YW4"/>
                                     </imageView>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NhA-R0-6o5">
-                                        <rect key="frame" x="48" y="405" width="204" height="29"/>
+                                        <rect key="frame" x="-2" y="405" width="304" height="29"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="자동 배차" id="lFT-gq-WKf">
                                             <font key="font" size="20" name="AppleSDGothicNeo-Bold"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -883,13 +883,13 @@ DOWNLOAD CENTER</string>
                                             <constraint firstItem="0B8-Tc-R3U" firstAttribute="centerY" secondItem="mmO-7g-QPo" secondAttribute="centerY" id="k84-Ns-AYg"/>
                                         </constraints>
                                     </customView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="fmp-U7-02K" customClass="DropView" customModule="FoodFlyDist" customModuleProvider="target">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="fmp-U7-02K" customClass="IPADropView" customModule="FoodFlyDist" customModuleProvider="target">
                                         <rect key="frame" x="20" y="215" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="fmp-U7-02K" secondAttribute="height" multiplier="1:1" id="ktQ-Dl-0ZW"/>
                                         </constraints>
                                     </customView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="MbK-oe-V9E" customClass="DropView" customModule="FoodFlyDist" customModuleProvider="target">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="MbK-oe-V9E" customClass="APKDropView" customModule="FoodFlyDist" customModuleProvider="target">
                                         <rect key="frame" x="160" y="215" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="MbK-oe-V9E" secondAttribute="height" multiplier="1:1" id="Vl6-5X-P9C"/>
@@ -913,10 +913,10 @@ DOWNLOAD CENTER</string>
                                             <constraint firstAttribute="height" constant="35" id="uvD-kQ-ukf"/>
                                         </constraints>
                                     </customView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="xLe-tG-Lsp" customClass="DropView" customModule="FoodFlyDist" customModuleProvider="target">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="xLe-tG-Lsp" customClass="IPADropView" customModule="FoodFlyDist" customModuleProvider="target">
                                         <rect key="frame" x="20" y="20" width="120" height="120"/>
                                     </customView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="HWU-1T-Q98" customClass="DropView" customModule="FoodFlyDist" customModuleProvider="target">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="HWU-1T-Q98" customClass="APKDropView" customModule="FoodFlyDist" customModuleProvider="target">
                                         <rect key="frame" x="160" y="20" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="HWU-1T-Q98" secondAttribute="height" multiplier="1:1" id="kam-vL-fea"/>
@@ -933,7 +933,7 @@ DOWNLOAD CENTER</string>
                                     <constraint firstItem="xLe-tG-Lsp" firstAttribute="width" secondItem="klE-Yx-hFO" secondAttribute="width" multiplier="1/2" constant="-30" id="Q3G-r5-trg"/>
                                     <constraint firstItem="xLe-tG-Lsp" firstAttribute="top" secondItem="fVV-58-Q9N" secondAttribute="bottom" constant="20" id="Qio-WP-f77"/>
                                     <constraint firstItem="MbK-oe-V9E" firstAttribute="leading" secondItem="fmp-U7-02K" secondAttribute="trailing" constant="20" id="UTJ-zM-FVP"/>
-                                    <constraint firstItem="NhA-R0-6o5" firstAttribute="leading" secondItem="klE-Yx-hFO" secondAttribute="leading" constant="50" id="VBH-JI-GBJ"/>
+                                    <constraint firstItem="NhA-R0-6o5" firstAttribute="leading" secondItem="klE-Yx-hFO" secondAttribute="leading" id="VBH-JI-GBJ"/>
                                     <constraint firstItem="1Sp-RY-yHR" firstAttribute="centerX" secondItem="klE-Yx-hFO" secondAttribute="centerX" id="Yv1-t2-TBy"/>
                                     <constraint firstItem="NhA-R0-6o5" firstAttribute="top" secondItem="1Sp-RY-yHR" secondAttribute="bottom" constant="15" id="ZoZ-j2-pnL"/>
                                     <constraint firstItem="xLe-tG-Lsp" firstAttribute="width" secondItem="xLe-tG-Lsp" secondAttribute="height" multiplier="1:1" id="eDa-ZS-cme"/>
@@ -946,7 +946,7 @@ DOWNLOAD CENTER</string>
                                     <constraint firstItem="fVV-58-Q9N" firstAttribute="top" secondItem="fmp-U7-02K" secondAttribute="bottom" constant="20" id="msG-Dz-OKh"/>
                                     <constraint firstItem="fVV-58-Q9N" firstAttribute="leading" secondItem="klE-Yx-hFO" secondAttribute="leading" id="nOU-MQ-ZL6"/>
                                     <constraint firstItem="HWU-1T-Q98" firstAttribute="leading" secondItem="xLe-tG-Lsp" secondAttribute="trailing" constant="20" id="qks-D4-41O"/>
-                                    <constraint firstAttribute="trailing" secondItem="NhA-R0-6o5" secondAttribute="trailing" constant="50" id="ryd-D6-lsF"/>
+                                    <constraint firstAttribute="trailing" secondItem="NhA-R0-6o5" secondAttribute="trailing" id="ryd-D6-lsF"/>
                                     <constraint firstAttribute="bottom" secondItem="xLe-tG-Lsp" secondAttribute="bottom" constant="20" id="sAY-Uc-J3l"/>
                                     <constraint firstItem="HWU-1T-Q98" firstAttribute="top" secondItem="fVV-58-Q9N" secondAttribute="bottom" constant="20" id="uMn-8J-7kU"/>
                                     <constraint firstItem="1Sp-RY-yHR" firstAttribute="top" secondItem="klE-Yx-hFO" secondAttribute="top" constant="30" id="udK-AF-ubz"/>
@@ -954,26 +954,162 @@ DOWNLOAD CENTER</string>
                                     <constraint firstItem="fmp-U7-02K" firstAttribute="width" secondItem="klE-Yx-hFO" secondAttribute="width" multiplier="1/2" constant="-30" id="wpV-C8-E8R"/>
                                 </constraints>
                             </customView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bfR-dd-i4x">
-                                <rect key="frame" x="360" y="128" width="81" height="32"/>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CyJ-zb-gyx">
+                                <rect key="frame" x="335" y="794" width="81" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QUU-vB-LaU">
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cTS-wr-WRz">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="fileUpload:" target="XfG-lQ-9wD" id="tby-op-UC7"/>
+                                    <action selector="fileUpload:" target="XfG-lQ-9wD" id="gI1-h8-ZOD"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DGR-AB-Fnq">
+                                <rect key="frame" x="547" y="13" width="78" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="64g-1m-uRh"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="취소" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OQc-4i-hJj">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xNp-HW-emF">
+                                <rect key="frame" x="628" y="13" width="78" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="hDI-9d-jfY"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="업로드" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DOM-kI-2xM">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                </buttonCell>
+                            </button>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="zcp-LD-Vcc">
+                                <rect key="frame" x="50" y="51" width="650" height="180"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hLm-ub-zzJ">
+                                        <rect key="frame" x="223" y="144" width="37" height="17"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="버전 : " id="sJy-IQ-dAu">
+                                            <font key="font" size="13" name=".AppleSDGothicNeoI-Bold"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q5U-Mx-ddO">
+                                        <rect key="frame" x="18" y="145" width="49" height="15"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="작성자 : " id="qFQ-Na-mfL">
+                                            <font key="font" size="13" name=".AppleSDGothicNeoI-Bold"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="0sb-1X-Ext">
+                                        <rect key="frame" x="18" y="108" width="53" height="17"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="수정 사항" id="oYn-C8-uXR">
+                                            <font key="font" size="13" name=".AppleSDGothicNeoI-Bold"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="aAZ-h7-nPa">
+                                        <rect key="frame" x="20" y="10" width="610" height="88"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="88" id="Vn5-za-goJ"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="V16-Ld-Kx3">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UdS-H1-GjG">
+                                        <rect key="frame" x="75" y="142" width="120" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="So7-Ad-pgK"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" allowsEditingTextAttributes="YES" id="J3p-pm-ewq">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" name="windowFrameTextColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BEO-Ok-76V">
+                                        <rect key="frame" x="268" y="142" width="150" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="HSd-vo-f2V"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" allowsEditingTextAttributes="YES" id="azF-oY-2O8">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" name="windowFrameTextColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nqu-Mt-WEX">
+                                        <rect key="frame" x="527" y="139" width="77" height="25"/>
+                                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="t8s-ho-kww" id="3OF-s5-5tL">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="7TJ-MB-brl">
+                                                <items>
+                                                    <menuItem title="Item 1" state="on" id="t8s-ho-kww"/>
+                                                    <menuItem title="Item 2" id="9Vd-0r-oLz"/>
+                                                    <menuItem title="Item 3" id="f4y-mh-9vd"/>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                    </popUpButton>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4VS-nJ-b6r">
+                                        <rect key="frame" x="446" y="144" width="75" height="17"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="업로드 서버 : " id="xHc-GW-Cwo">
+                                            <font key="font" size="13" name=".AppleSDGothicNeoI-Bold"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Nqu-Mt-WEX" firstAttribute="leading" secondItem="4VS-nJ-b6r" secondAttribute="trailing" constant="10" id="0zJ-yd-vHr"/>
+                                    <constraint firstItem="0sb-1X-Ext" firstAttribute="leading" secondItem="Q5U-Mx-ddO" secondAttribute="leading" id="1on-oE-LWS"/>
+                                    <constraint firstItem="BEO-Ok-76V" firstAttribute="leading" secondItem="hLm-ub-zzJ" secondAttribute="trailing" constant="10" id="3tm-ic-2vr"/>
+                                    <constraint firstItem="hLm-ub-zzJ" firstAttribute="leading" secondItem="UdS-H1-GjG" secondAttribute="trailing" constant="30" id="4hJ-7i-ZON"/>
+                                    <constraint firstAttribute="trailing" secondItem="aAZ-h7-nPa" secondAttribute="trailing" constant="20" id="4s9-n2-ky9"/>
+                                    <constraint firstItem="aAZ-h7-nPa" firstAttribute="leading" secondItem="zcp-LD-Vcc" secondAttribute="leading" constant="20" id="5Oq-3v-r9A"/>
+                                    <constraint firstItem="BEO-Ok-76V" firstAttribute="centerY" secondItem="hLm-ub-zzJ" secondAttribute="centerY" id="7HU-Ta-GgQ"/>
+                                    <constraint firstItem="hLm-ub-zzJ" firstAttribute="centerY" secondItem="Q5U-Mx-ddO" secondAttribute="centerY" id="8Yo-OU-wEh"/>
+                                    <constraint firstItem="Q5U-Mx-ddO" firstAttribute="leading" secondItem="zcp-LD-Vcc" secondAttribute="leading" constant="20" id="8lx-Dk-OEN"/>
+                                    <constraint firstItem="Q5U-Mx-ddO" firstAttribute="top" secondItem="zcp-LD-Vcc" secondAttribute="top" constant="20" id="9C2-r3-jdm"/>
+                                    <constraint firstItem="4VS-nJ-b6r" firstAttribute="leading" secondItem="BEO-Ok-76V" secondAttribute="trailing" constant="30" id="EvJ-av-1ob"/>
+                                    <constraint firstItem="Nqu-Mt-WEX" firstAttribute="centerY" secondItem="4VS-nJ-b6r" secondAttribute="centerY" id="LpC-dD-Gmt"/>
+                                    <constraint firstItem="UdS-H1-GjG" firstAttribute="centerY" secondItem="Q5U-Mx-ddO" secondAttribute="centerY" id="NwG-xk-JzG"/>
+                                    <constraint firstAttribute="height" constant="180" id="QFH-qb-vEK"/>
+                                    <constraint firstItem="4VS-nJ-b6r" firstAttribute="centerY" secondItem="Q5U-Mx-ddO" secondAttribute="centerY" id="UEe-3l-TQg"/>
+                                    <constraint firstAttribute="bottom" secondItem="aAZ-h7-nPa" secondAttribute="bottom" constant="10" id="auW-1M-fTT"/>
+                                    <constraint firstItem="UdS-H1-GjG" firstAttribute="leading" secondItem="Q5U-Mx-ddO" secondAttribute="trailing" constant="10" id="kgE-i1-zXz"/>
+                                    <constraint firstItem="aAZ-h7-nPa" firstAttribute="top" secondItem="0sb-1X-Ext" secondAttribute="bottom" constant="10" id="nMS-3F-tFa"/>
+                                    <constraint firstItem="0sb-1X-Ext" firstAttribute="top" secondItem="Q5U-Mx-ddO" secondAttribute="bottom" constant="20" id="r6Z-bb-b45"/>
+                                </constraints>
+                            </customView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="h9H-Y0-7RL" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="30" id="0dc-5a-4xl"/>
+                            <constraint firstAttribute="bottom" secondItem="xNp-HW-emF" secondAttribute="bottom" constant="20" id="3Rw-Q2-WZi"/>
+                            <constraint firstItem="xNp-HW-emF" firstAttribute="leading" secondItem="DGR-AB-Fnq" secondAttribute="trailing" constant="15" id="4YR-s8-eHA"/>
+                            <constraint firstItem="xNp-HW-emF" firstAttribute="trailing" secondItem="zcp-LD-Vcc" secondAttribute="trailing" id="6IY-Xj-5Gr"/>
+                            <constraint firstItem="xNp-HW-emF" firstAttribute="top" secondItem="zcp-LD-Vcc" secondAttribute="bottom" constant="10" id="KYv-bx-S52"/>
                             <constraint firstItem="klE-Yx-hFO" firstAttribute="top" secondItem="h9H-Y0-7RL" secondAttribute="bottom" constant="50" id="Mol-TC-emu"/>
                             <constraint firstItem="klE-Yx-hFO" firstAttribute="leading" secondItem="yH5-O6-rWg" secondAttribute="trailing" constant="50" id="Q1g-b1-Inf"/>
+                            <constraint firstAttribute="trailing" secondItem="zcp-LD-Vcc" secondAttribute="trailing" constant="50" id="Qn1-ha-8AW"/>
                             <constraint firstAttribute="trailing" secondItem="h9H-Y0-7RL" secondAttribute="trailing" id="RwR-6W-lVT"/>
+                            <constraint firstItem="zcp-LD-Vcc" firstAttribute="top" secondItem="yH5-O6-rWg" secondAttribute="bottom" constant="20" id="TQl-cz-W4f"/>
                             <constraint firstItem="yH5-O6-rWg" firstAttribute="top" secondItem="h9H-Y0-7RL" secondAttribute="bottom" constant="50" id="V6Y-Uo-sOn"/>
                             <constraint firstItem="FiT-CT-NDR" firstAttribute="leading" secondItem="LZv-h2-Zud" secondAttribute="trailing" constant="8" id="Vw6-LV-UNn"/>
                             <constraint firstItem="yH5-O6-rWg" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="50" id="WWR-fj-DKy"/>
+                            <constraint firstItem="zcp-LD-Vcc" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="50" id="bgK-mA-GRY"/>
+                            <constraint firstItem="DGR-AB-Fnq" firstAttribute="top" secondItem="zcp-LD-Vcc" secondAttribute="bottom" constant="10" id="cS8-q5-c7j"/>
                             <constraint firstItem="FiT-CT-NDR" firstAttribute="centerY" secondItem="LZv-h2-Zud" secondAttribute="centerY" id="hdc-jM-hYK"/>
                             <constraint firstAttribute="trailing" secondItem="klE-Yx-hFO" secondAttribute="trailing" constant="50" id="iau-z0-hyF"/>
                             <constraint firstItem="h9H-Y0-7RL" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="jHD-WS-13n"/>
@@ -982,26 +1118,35 @@ DOWNLOAD CENTER</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="autoDevAPKView" destination="MbK-oe-V9E" id="Dkb-ku-Efu"/>
                         <outlet property="autoDevBackground" destination="mmO-7g-QPo" id="Vqn-xg-dmc"/>
+                        <outlet property="autoDevIPAView" destination="fmp-U7-02K" id="ut1-6F-hMq"/>
                         <outlet property="autoDevTitle" destination="0B8-Tc-R3U" id="uuz-Y0-BXo"/>
+                        <outlet property="autoProAPKView" destination="HWU-1T-Q98" id="Yl4-yn-5jS"/>
                         <outlet property="autoProBackground" destination="fVV-58-Q9N" id="Jcn-Hm-hu1"/>
+                        <outlet property="autoProIPAView" destination="xLe-tG-Lsp" id="dak-Et-rHG"/>
                         <outlet property="autoProTitle" destination="edi-XF-hJ3" id="jDv-KX-86N"/>
                         <outlet property="autoRiderContainer" destination="klE-Yx-hFO" id="Kca-2k-Jg6"/>
                         <outlet property="autoTitle" destination="NhA-R0-6o5" id="tuh-k3-4MK"/>
+                        <outlet property="choiceDevAPKView" destination="Mu5-2q-Pdq" id="n5B-pu-dOu"/>
                         <outlet property="choiceDevBackground" destination="yd0-K6-fF9" id="21a-OL-6Rw"/>
+                        <outlet property="choiceDevIPAView" destination="XaU-ip-2Rx" id="ZAP-ow-yAr"/>
                         <outlet property="choiceDevTitle" destination="bX6-Gw-q7R" id="59x-6F-7r7"/>
+                        <outlet property="choiceProAPKView" destination="EJ2-IO-CDr" id="GYo-3e-gP4"/>
                         <outlet property="choiceProBackground" destination="pvy-jQ-6Pg" id="o4u-yB-D7F"/>
+                        <outlet property="choiceProIPAView" destination="IPO-fs-Pva" id="bFM-oK-eow"/>
                         <outlet property="choiceProTitle" destination="mnN-OC-sPq" id="HEN-8u-ObK"/>
                         <outlet property="choiceRiderContainer" destination="yH5-O6-rWg" id="iEE-VN-QIi"/>
                         <outlet property="choiceTitle" destination="SH8-NN-khs" id="b8p-uf-0gY"/>
-                        <outlet property="dropView" destination="XaU-ip-2Rx" id="yAQ-fR-U0A"/>
+                        <outlet property="detailInfoView" destination="zcp-LD-Vcc" id="wGf-A3-U6G"/>
+                        <outlet property="detailInfoViewHeight" destination="QFH-qb-vEK" id="Wv8-YN-1Mj"/>
                         <outlet property="serviceStatusLabel" destination="FiT-CT-NDR" id="WNy-JQ-P9t"/>
                         <outlet property="serviceStatusView" destination="LZv-h2-Zud" id="7lC-uy-NTS"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="214" y="1063.5"/>
+            <point key="canvasLocation" x="214" y="1010"/>
         </scene>
     </scenes>
     <resources>
