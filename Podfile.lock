@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
-  - SSZipArchive (2.2.1)
+  - SSZipArchive (2.1.5)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
@@ -13,8 +13,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  SSZipArchive: 8e859da2520142e09166bc9161967db296e9d02f
+  SSZipArchive: cefe1364104a0231268a5deb8495bdf2861f52f0
 
-PODFILE CHECKSUM: 76e2aa5d0a8e9d8999731ea5e58aa478df44e28c
+PODFILE CHECKSUM: 41f9b23a782cd3ed3a1891455472e6c8daa211e4
 
 COCOAPODS: 1.5.3

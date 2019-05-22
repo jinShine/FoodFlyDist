@@ -46,8 +46,18 @@ extension API : TargetType {
     
     public var parameter: Parameters {
         switch self {
-        case .pingCheck, .fileUpload:
+        case .pingCheck:
             return [:]
+        case .fileUpload(let data):
+            return [
+                "flatform_type" : "ios",
+                "version" : "1.0.0",
+                "revision_history" : "revision history area",
+                "registrant" : "admin",
+                "app_type" : "auto",
+                "appfile" : data,
+                "app_environment" : "development"
+            ]
         }
     }
     

@@ -25,8 +25,6 @@ class IPADropView: NSView {
         return label
     }()
     
-    
-    
     // Property
     public var filePath: String?
     public var expectedExt = ["ipa"] {

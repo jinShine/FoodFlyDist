@@ -40,7 +40,7 @@ extension FFDService: FFDServiceType {
             for (key, value) in api.parameter {
                 multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key)
             }
-            multipartFormData.append(fileData, withName: "test-ipa", mimeType: "application/octet-stream")
+//            multipartFormData.append(fileData, withName: "appfile", mimeType: "application/octet-stream")
         }, with: api.urlRequest!) { (result) in
             switch result {
             case .success(request: let upload,_,_):

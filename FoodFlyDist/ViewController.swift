@@ -11,6 +11,9 @@ import SSZipArchive
 
 class ViewController: NSViewController {
     
+    @IBOutlet weak var serviceStatusView: NSView!
+    @IBOutlet weak var serviceStatusLabel: NSTextField!
+    
     /*
      선택
      */
@@ -44,11 +47,9 @@ class ViewController: NSViewController {
     @IBOutlet weak var autoProIPAView: IPADropView!
     @IBOutlet weak var autoProAPKView: IPADropView!
     
+    @IBOutlet weak var uploadButton: NSButton!
     
     
-    
-    @IBOutlet weak var serviceStatusView: NSView!
-    @IBOutlet weak var serviceStatusLabel: NSTextField!
     
     // Detail Infomation View
     @IBOutlet weak var detailInfoView: NSView!
@@ -58,18 +59,15 @@ class ViewController: NSViewController {
     
     var serviceStatus: ServiceState = .failed
     let service: FFDService = FFDService()
-
+    var uploadFilePath: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
-//        choiceDevIPAView.delegate = self
+        
         detailInfoViewHeight.constant = 0
-        
         NotificationCenter.default.addObserver(self, selector: #selector(getDropFilePath), name: NSNotification.Name("DropFilePath"), object: nil)
-        
-        
-        
     }
     
     override func viewWillAppear() {
@@ -84,26 +82,24 @@ class ViewController: NSViewController {
         }
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     @IBAction func fileUpload(_ sender: NSButton) {
-        
-        
-        
-//        do {
-//            let fileUrl = URL(fileURLWithPath: dropView.filePath ?? "")
-//            let fileData = try Data(contentsOf: fileUrl)
-//            service.fileUpload(fileData: fileData) { result in
-//                result.uploadProgress(closure: { progress in
-//                    print("업로드중 \(progress.fractionCompleted)")
-//                })
-//            }
-//        } catch {
-//            print("FILE OPTIONAL ERROR")
-//        }
-//        sender.
-        
-        
-        
-
+        do {
+            let fileUrl = URL(fileURLWithPath: uploadFilePath ?? "")
+            let fileData = try Data(contentsOf: fileUrl)
+            service.fileUpload(fileData: fileData) { result in
+                result.uploadProgress(closure: { progress in
+                    let fraction = Float(progress.fractionCompleted)
+                    let uploadValue = String(format: "%.f", fraction * 100)
+                    print("업로드중 \(uploadValue)")
+                })
+            }
+        } catch {
+            print("FILE OPTIONAL ERROR")
+        }
     }
 }
 
@@ -158,6 +154,12 @@ extension ViewController {
         autoProIPAView.title = "ipa파일 끌어넣기"
         autoProAPKView.image = NSImage(named: "apk-file")
         autoProAPKView.title = "apk파일 끌어넣기"
+        
+        
+        
+        
+        uploadButton.isEnabled = false
+        uploadButton.isHighlighted = true
     }
     
     private func setupDetailInfoView() {
@@ -196,20 +198,24 @@ extension ViewController {
     }
     
     @objc private func getDropFilePath(noti: Notification) {
+        
         setupDetailInfoView()
+        uploadButton.isEnabled = true
+        uploadButton.isHighlighted = false
+        
         guard let userInfo = noti.userInfo,
         let filePath = userInfo["FilePath"] as? String else { return }
-
-        let unZipPath = tempUnZipPath(from: filePath)
-        print(unZipPath)
-
-        //////////////////////
+        uploadFilePath = filePath
         
-        let success: Bool = SSZipArchive.unzipFile(atPath: filePath, toDestination: filePath)
+        // ipa 파일을 UnZip을 하면 Payload폴더가 생김(정보를 가져올수 있음)
+        let unZipPath = tempUnZipPath(from: filePath)
+
+        let success: Bool = SSZipArchive.unzipFile(atPath: filePath, toDestination: unZipPath)
         if success {
-            print("Success zip")
+            print(unZipPath + "Payload")
+            print("Success UnZip")
         } else {
-            print("Error!!!!!!!")
+            print("Fail UnZip")
         }
         
     }
@@ -217,16 +223,10 @@ extension ViewController {
     func tempUnZipPath(from filePath: String) -> String {
         print("1",filePath)
         let fileURLPath = URL(fileURLWithPath: filePath).deletingLastPathComponent()
-        print("2",try? String(contentsOf: fileURLPath, encoding: .utf8))
-//        var path: String = try! String(contentsOf: fileURLPath, encoding: .utf8)
-//        do {
-//
-//            print(fileURLPath)
-//
-//            path = try String(contentsOf: fileURLPath, encoding: .utf8)
-//        } catch {
-//            print("UnZipPath Error")
-//        }
-        return fileURLPath.absoluteString
+        let encodingPath = fileURLPath.absoluteString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        if let path = encodingPath?.components(separatedBy: "file://").last {
+            return path
+        }
+        return ""
     }
 }

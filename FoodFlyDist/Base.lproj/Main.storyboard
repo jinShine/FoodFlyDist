@@ -985,8 +985,11 @@ Gw
                                 </constraints>
                                 <buttonCell key="cell" type="push" title="업로드" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DOM-kI-2xM">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="fileUpload:" target="XfG-lQ-9wD" id="UoK-vm-bU7"/>
+                                </connections>
                             </button>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="zcp-LD-Vcc">
                                 <rect key="frame" x="50" y="51" width="650" height="180"/>
@@ -1142,6 +1145,7 @@ Gw
                         <outlet property="detailInfoViewHeight" destination="QFH-qb-vEK" id="Wv8-YN-1Mj"/>
                         <outlet property="serviceStatusLabel" destination="FiT-CT-NDR" id="WNy-JQ-P9t"/>
                         <outlet property="serviceStatusView" destination="LZv-h2-Zud" id="7lC-uy-NTS"/>
+                        <outlet property="uploadButton" destination="xNp-HW-emF" id="Xol-PH-dlT"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
