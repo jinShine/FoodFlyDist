@@ -9,7 +9,9 @@
 import Cocoa
 import SSZipArchive
 
-class ViewController: NSViewController {
+class MainViewController: NSViewController {
+    
+    //MARK:- UI Properties
     
     @IBOutlet weak var serviceStatusView: NSView!
     @IBOutlet weak var serviceStatusLabel: NSTextField!
@@ -47,19 +49,34 @@ class ViewController: NSViewController {
     @IBOutlet weak var autoProIPAView: IPADropView!
     @IBOutlet weak var autoProAPKView: IPADropView!
     
+    
+    
+    
+    
     @IBOutlet weak var uploadButton: NSButton!
     
     
-    
-    // Detail Infomation View
+    /*
+     Detail Infomation View
+     */
     @IBOutlet weak var detailInfoView: NSView!
     @IBOutlet weak var detailInfoViewHeight: NSLayoutConstraint!
+    //ㄴ Detail Info
+    @IBOutlet weak var writerTextField: NSTextField!
+    @IBOutlet weak var versionTextField: NSTextField!
+    @IBOutlet weak var uploadServerPopup: NSPopUpButton!
+    @IBOutlet weak var correctionTextField: NSScrollView!
     
     
+    //MARK:- Properties
     
     var serviceStatus: ServiceState = .failed
     let service: FFDService = FFDService()
     var uploadFilePath: String?
+    
+    
+    
+    //MARK:- Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,24 +103,37 @@ class ViewController: NSViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    
+    //MARK:- Actions
+    
     @IBAction func fileUpload(_ sender: NSButton) {
-        do {
+//        do {
             let fileUrl = URL(fileURLWithPath: uploadFilePath ?? "")
-            let fileData = try Data(contentsOf: fileUrl)
-            service.fileUpload(fileData: fileData) { result in
-                result.uploadProgress(closure: { progress in
-                    let fraction = Float(progress.fractionCompleted)
-                    let uploadValue = String(format: "%.f", fraction * 100)
-                    print("업로드중 \(uploadValue)")
-                })
-            }
-        } catch {
-            print("FILE OPTIONAL ERROR")
-        }
+//            let fileData = try Data(contentsOf: fileUrl)
+            
+            print(writerTextField.stringValue)
+            print(versionTextField.stringValue)
+            print(uploadServerPopup.titleOfSelectedItem)
+            print((correctionTextField.documentView as! NSTextView).string)
+        
+            
+            
+//            service.fileUpload(fileData: fileData) { result in
+//                result.uploadProgress(closure: { progress in
+//                    let fraction = Float(progress.fractionCompleted)
+//                    let uploadValue = String(format: "%.f", fraction * 100)
+//                    print("업로드중 \(uploadValue)")
+//                })
+//            }
+//        } catch {
+//            print("FILE OPTIONAL ERROR")
+//        }
     }
 }
 
-extension ViewController {
+// MARK:- Methods
+
+extension MainViewController {
     
     private func setupUI() {
         view.wantsLayer = true
@@ -156,6 +186,15 @@ extension ViewController {
         autoProAPKView.title = "apk파일 끌어넣기"
         
         
+        // Detail Info
+        uploadServerPopup.wantsLayer = true
+        uploadServerPopup.removeAllItems()
+        uploadServerPopup.attributedStringValue = NSAttributedString(string: "DD", attributes: [NSAttributedString.Key.foregroundColor : NSColor.black])
+        uploadServerPopup.addItems(withTitles: ["Development","Production"])
+        uploadServerPopup.itemArray.forEach {
+            
+            $0.attributedTitle = NSMutableAttributedString(string: $0.title, attributes: [NSAttributedString.Key.foregroundColor : NSColor.black])
+        }
         
         
         uploadButton.isEnabled = false
