@@ -63,6 +63,12 @@ class MainViewController: NSViewController {
     @IBOutlet weak var uploadButton: NSButton!
     
     
+    
+    
+    
+    @IBOutlet weak var uploadProgressbar: NSProgressIndicator!
+    @IBOutlet weak var uploadProgressValue: NSTextField!
+    
     /*
      Detail Infomation View
      */
@@ -124,8 +130,7 @@ class MainViewController: NSViewController {
             print(uploadServerPopup.titleOfSelectedItem?.lowercased())
             print((revisionHistoryTextField.documentView as! NSTextView).string)
             print(flatformType)
-        
-            
+
             service.fileUpload(flatform: flatformType ?? "",
                                registrant: registrantTextField.stringValue,
                                version: versionTextField.stringValue,
@@ -136,6 +141,8 @@ class MainViewController: NSViewController {
                 result.uploadProgress(closure: { progress in
                     let fraction = Float(progress.fractionCompleted)
                     let uploadValue = String(format: "%.f", fraction * 100)
+                    self.uploadProgressbar.doubleValue = Double(uploadValue) ?? 0
+                    self.uploadProgressValue.stringValue = "\(uploadValue)%"
                     print("업로드중 \(uploadValue)")
                 })
             }
@@ -249,6 +256,8 @@ extension MainViewController {
         setupDetailInfoView()
         uploadButton.isEnabled = true
         uploadButton.isHighlighted = false
+        uploadProgressbar.isHidden = false
+        uploadProgressValue.isHidden = false
         
         guard let userInfo = noti.userInfo,
         let filePath = userInfo["FilePath"] as? String,

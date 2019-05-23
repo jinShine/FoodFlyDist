@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		44914CBA05ACA0EFC4642D2F /* Pods_FoodFlyDist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27830A7108AE389EA9FEBAE /* Pods_FoodFlyDist.framework */; };
+		5C030BCE2296F80A006A86BA /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C030BCD2296F80A006A86BA /* HistoryViewController.swift */; };
+		5C030BD022970007006A86BA /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C030BCF22970007006A86BA /* HistoryModel.swift */; };
 		5C896F6C22923A9300C035B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C896F6B22923A9300C035B2 /* AppDelegate.swift */; };
 		5C896F6E22923A9300C035B2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C896F6D22923A9300C035B2 /* MainViewController.swift */; };
 		5C896F7022923A9400C035B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C896F6F22923A9400C035B2 /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		43EFD1D8C92A46625113BEBD /* Pods-FoodFlyDist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodFlyDist.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodFlyDist/Pods-FoodFlyDist.release.xcconfig"; sourceTree = "<group>"; };
 		495308DB9C665A14BF8739ED /* Pods_FoodFlyDistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodFlyDistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C030BCD2296F80A006A86BA /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		5C030BCF22970007006A86BA /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		5C896F6822923A9300C035B2 /* FoodFlyDist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFlyDist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C896F6B22923A9300C035B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C896F6D22923A9300C035B2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,15 @@
 				5C896F6D22923A9300C035B2 /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		5C030BCC2296F7E3006A86BA /* History */ = {
+			isa = PBXGroup;
+			children = (
+				5C030BCD2296F80A006A86BA /* HistoryViewController.swift */,
+				5C030BCF22970007006A86BA /* HistoryModel.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 		5C896F5F22923A9300C035B2 = {
@@ -208,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				5C030BCA229627AD006A86BA /* Main */,
+				5C030BCC2296F7E3006A86BA /* History */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -404,6 +418,7 @@
 				5C896F6E22923A9300C035B2 /* MainViewController.swift in Sources */,
 				5C896F6C22923A9300C035B2 /* AppDelegate.swift in Sources */,
 				5C98F9452293F5E00083AB45 /* UIColor+Extension.swift in Sources */,
+				5C030BCE2296F80A006A86BA /* HistoryViewController.swift in Sources */,
 				5C98F94922950D1E0083AB45 /* APKDropView.swift in Sources */,
 				5C98F92D229263E00083AB45 /* SwiftyPing.swift in Sources */,
 				5C98F9272292526E0083AB45 /* App.swift in Sources */,
@@ -411,6 +426,7 @@
 				5C896F8D22924E0E00C035B2 /* FFDServiceType.swift in Sources */,
 				5C98F94722950D000083AB45 /* IPADropView.swift in Sources */,
 				5C98F93022926F330083AB45 /* ServiceState.swift in Sources */,
+				5C030BD022970007006A86BA /* HistoryModel.swift in Sources */,
 				5C98F93522929FDC0083AB45 /* FFDService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
