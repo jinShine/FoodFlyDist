@@ -196,7 +196,7 @@ extension MainViewController {
             $0.attributedTitle = NSMutableAttributedString(string: $0.title, attributes: [NSAttributedString.Key.foregroundColor : NSColor.black])
         }
         
-        
+         
         uploadButton.isEnabled = false
         uploadButton.isHighlighted = true
     }
