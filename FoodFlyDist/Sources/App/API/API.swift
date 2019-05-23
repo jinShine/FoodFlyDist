@@ -12,7 +12,7 @@ import Alamofire
 
 enum API {
     case pingCheck
-    case fileUpload(Data)
+    case fileUpload
 }
 
 extension API : TargetType {
@@ -46,18 +46,18 @@ extension API : TargetType {
     
     public var parameter: Parameters {
         switch self {
-        case .pingCheck:
+        case .pingCheck, .fileUpload:
             return [:]
-        case .fileUpload(let data):
-            return [
-                "flatform_type" : "ios",
-                "version" : "1.0.0",
-                "revision_history" : "revision history area",
-                "registrant" : "admin",
-                "app_type" : "auto",
-                "appfile" : data,
-                "app_environment" : "development"
-            ]
+//        case .fileUpload(let appFile):
+//            return [
+//                "flatform_type" : "ios",
+//                "version" : "1.0.0",
+//                "revision_history" : "revision history area",
+//                "registrant" : "admin",
+//                "app_type" : "auto",
+//                "appfile" : appFile,
+//                "app_environment" : "development"
+//            ]
         }
     }
     
@@ -72,13 +72,17 @@ extension API : TargetType {
 
 extension API: URLRequestConvertible {
     func asURLRequest() throws -> URLRequest {
+        
+        let url = self.baseURL.appendingPathComponent(self.path)
+        var urlRequest = try URLRequest(url: url, method: self.method, headers: self.header)
+        
         switch self {
-        case .pingCheck, .fileUpload:
-            let url = self.baseURL.appendingPathComponent(self.path)
-            var urlRequest = try URLRequest(url: url, method: self.method, headers: self.header)
+        case .pingCheck:
             urlRequest = try URLEncoding.default.encode(urlRequest, with: self.parameter)
             print("Router .\(self) URL : ", urlRequest)
-            return urlRequest
+        case .fileUpload:
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
         }
+        return urlRequest
     }
 }

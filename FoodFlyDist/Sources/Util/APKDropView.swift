@@ -102,6 +102,13 @@ class APKDropView: NSView {
             let path = pasteboard[0] as? String
             else { return false }
         
+        NotificationCenter.default.post(name: NSNotification.Name("DropFilePath"),
+                                        object: nil,
+                                        userInfo: [
+                                            "FilePath" : path,
+                                            "Flatform" : "android"
+                                        ])
+        
         self._imageView.image = NSImage(named: "apk-file-upload")
         self.filePath = path
         Swift.print("FilePath: \(path)")

@@ -9,6 +9,13 @@
 import Cocoa
 import SSZipArchive
 
+enum Choice {
+    case devIPA
+    case devAPK
+    case proIPA
+    case proAPK
+}
+
 class MainViewController: NSViewController {
     
     //MARK:- UI Properties
@@ -62,10 +69,10 @@ class MainViewController: NSViewController {
     @IBOutlet weak var detailInfoView: NSView!
     @IBOutlet weak var detailInfoViewHeight: NSLayoutConstraint!
     //ㄴ Detail Info
-    @IBOutlet weak var writerTextField: NSTextField!
+    @IBOutlet weak var registrantTextField: NSTextField!
     @IBOutlet weak var versionTextField: NSTextField!
     @IBOutlet weak var uploadServerPopup: NSPopUpButton!
-    @IBOutlet weak var correctionTextField: NSScrollView!
+    @IBOutlet weak var revisionHistoryTextField: NSScrollView!
     
     
     //MARK:- Properties
@@ -73,6 +80,7 @@ class MainViewController: NSViewController {
     var serviceStatus: ServiceState = .failed
     let service: FFDService = FFDService()
     var uploadFilePath: String?
+    var flatformType: String?
     
     
     
@@ -84,7 +92,7 @@ class MainViewController: NSViewController {
         setupUI()
         
         detailInfoViewHeight.constant = 0
-        NotificationCenter.default.addObserver(self, selector: #selector(getDropFilePath), name: NSNotification.Name("DropFilePath"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getDropFileInfo), name: NSNotification.Name("DropFilePath"), object: nil)
     }
     
     override func viewWillAppear() {
@@ -107,27 +115,33 @@ class MainViewController: NSViewController {
     //MARK:- Actions
     
     @IBAction func fileUpload(_ sender: NSButton) {
-//        do {
+        do {
             let fileUrl = URL(fileURLWithPath: uploadFilePath ?? "")
-//            let fileData = try Data(contentsOf: fileUrl)
+            let fileData = try Data(contentsOf: fileUrl)
             
-            print(writerTextField.stringValue)
+            print(registrantTextField.stringValue)
             print(versionTextField.stringValue)
-            print(uploadServerPopup.titleOfSelectedItem)
-            print((correctionTextField.documentView as! NSTextView).string)
+            print(uploadServerPopup.titleOfSelectedItem?.lowercased())
+            print((revisionHistoryTextField.documentView as! NSTextView).string)
+            print(flatformType)
         
             
-            
-//            service.fileUpload(fileData: fileData) { result in
-//                result.uploadProgress(closure: { progress in
-//                    let fraction = Float(progress.fractionCompleted)
-//                    let uploadValue = String(format: "%.f", fraction * 100)
-//                    print("업로드중 \(uploadValue)")
-//                })
-//            }
-//        } catch {
-//            print("FILE OPTIONAL ERROR")
-//        }
+            service.fileUpload(flatform: flatformType ?? "",
+                               registrant: registrantTextField.stringValue,
+                               version: versionTextField.stringValue,
+                               uploadServer: uploadServerPopup.titleOfSelectedItem?.lowercased() ?? "",
+                               appType: "auto",
+                               revisionHistory: (revisionHistoryTextField.documentView as! NSTextView).string,
+                               fileData: fileData) { result in
+                result.uploadProgress(closure: { progress in
+                    let fraction = Float(progress.fractionCompleted)
+                    let uploadValue = String(format: "%.f", fraction * 100)
+                    print("업로드중 \(uploadValue)")
+                })
+            }
+        } catch {
+            print("FILE OPTIONAL ERROR")
+        }
     }
 }
 
@@ -189,13 +203,7 @@ extension MainViewController {
         // Detail Info
         uploadServerPopup.wantsLayer = true
         uploadServerPopup.removeAllItems()
-        uploadServerPopup.attributedStringValue = NSAttributedString(string: "DD", attributes: [NSAttributedString.Key.foregroundColor : NSColor.black])
         uploadServerPopup.addItems(withTitles: ["Development","Production"])
-        uploadServerPopup.itemArray.forEach {
-            
-            $0.attributedTitle = NSMutableAttributedString(string: $0.title, attributes: [NSAttributedString.Key.foregroundColor : NSColor.black])
-        }
-        
          
         uploadButton.isEnabled = false
         uploadButton.isHighlighted = true
@@ -203,7 +211,7 @@ extension MainViewController {
     
     private func setupDetailInfoView() {
         detailInfoView.wantsLayer = true
-        detailInfoView.layer?.backgroundColor = NSColor.white.cgColor
+        detailInfoView.layer?.backgroundColor = NSColor.clear.cgColor
         detailInfoView.layer?.cornerRadius = 10
         
         NSAnimationContext.runAnimationGroup { _ in
@@ -236,15 +244,17 @@ extension MainViewController {
         }
     }
     
-    @objc private func getDropFilePath(noti: Notification) {
+    @objc private func getDropFileInfo(noti: Notification) {
         
         setupDetailInfoView()
         uploadButton.isEnabled = true
         uploadButton.isHighlighted = false
         
         guard let userInfo = noti.userInfo,
-        let filePath = userInfo["FilePath"] as? String else { return }
+        let filePath = userInfo["FilePath"] as? String,
+        let flatform = userInfo["Flatform"] as? String else { return }
         uploadFilePath = filePath
+        flatformType = flatform
         
         // ipa 파일을 UnZip을 하면 Payload폴더가 생김(정보를 가져올수 있음)
         let unZipPath = tempUnZipPath(from: filePath)
@@ -260,7 +270,6 @@ extension MainViewController {
     }
     
     func tempUnZipPath(from filePath: String) -> String {
-        print("1",filePath)
         let fileURLPath = URL(fileURLWithPath: filePath).deletingLastPathComponent()
         let encodingPath = fileURLPath.absoluteString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         if let path = encodingPath?.components(separatedBy: "file://").last {

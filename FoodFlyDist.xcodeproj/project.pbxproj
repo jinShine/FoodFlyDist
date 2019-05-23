@@ -104,13 +104,6 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		5C030BCB229627B8006A86BA /* S */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = S;
-			sourceTree = "<group>";
-		};
 		5C896F5F22923A9300C035B2 = {
 			isa = PBXGroup;
 			children = (
@@ -157,9 +150,8 @@
 		5C896F8922924D9000C035B2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				5C030BCB229627B8006A86BA /* S */,
-				5C030BCA229627AD006A86BA /* Main */,
 				5C98F9252292525A0083AB45 /* App */,
+				5C98F94A2296A31D0083AB45 /* Scene */,
 				5C896F8B22924DCE00C035B2 /* Service */,
 				5C98F92B229263C00083AB45 /* Util */,
 			);
@@ -210,6 +202,14 @@
 				5C98F9442293F5E00083AB45 /* UIColor+Extension.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		5C98F94A2296A31D0083AB45 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				5C030BCA229627AD006A86BA /* Main */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		A0B015E391363A7ED1562DB2 /* Frameworks */ = {

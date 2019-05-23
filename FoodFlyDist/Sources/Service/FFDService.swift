@@ -21,6 +21,7 @@ class FFDService: Alamofire.SessionManager {
 }
 
 extension FFDService: FFDServiceType {
+    
     func pingCheck(completion: @escaping (_ result: Bool,_ pinger: SwiftyPing?) -> ()) {
         let host = API.pingCheck.baseURL.absoluteString.components(separatedBy: ":")[1]
         print("HOST", host)
@@ -34,22 +35,34 @@ extension FFDService: FFDServiceType {
         }
     }
     
-    func fileUpload(fileData: Data, completion: @escaping (UploadRequest) -> ()) {
-        let api = API.fileUpload(fileData)
-        Alamofire.upload(multipartFormData: { (multipartFormData) in
-            for (key, value) in api.parameter {
-                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key)
-            }
-//            multipartFormData.append(fileData, withName: "appfile", mimeType: "application/octet-stream")
-        }, with: api.urlRequest!) { (result) in
+    func fileUpload(flatform: String,
+                    registrant: String,
+                    version: String,
+                    uploadServer: String,
+                    appType: String,
+                    revisionHistory: String,
+                    fileData: Data,
+                    completion: @escaping (UploadRequest) -> ()) {
+        
+        let api = API.fileUpload
+        
+        Alamofire.upload(multipartFormData: { multipartform in
+            multipartform.append(flatform.data(using: .utf8)!, withName: "flatform_type")
+            multipartform.append(registrant.data(using: .utf8)!, withName: "version")
+            multipartform.append(uploadServer.data(using: .utf8)!, withName: "app_environment")
+            multipartform.append(appType.data(using: .utf8)!, withName: "app_type")
+            multipartform.append(revisionHistory.data(using: .utf8)!, withName: "revision_history")
+            multipartform.append(fileData, withName: "appfile")
+        }, with: api.urlRequest!) { result in
             switch result {
-            case .success(request: let upload,_,_):
+            case .success(request: let upload, _, _):
+                upload.responseJSON(completionHandler: { response in
+                    print("RESPONSE JSON", response)
+                })
                 completion(upload)
             case .failure(let error):
                 print(error)
             }
         }
-      
     }
-    
 }

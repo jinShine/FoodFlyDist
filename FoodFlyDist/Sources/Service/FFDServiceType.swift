@@ -10,5 +10,11 @@ import Alamofire
 
 protocol FFDServiceType {
     func pingCheck(completion: @escaping (_ result: Bool,_ pinger: SwiftyPing?) -> ())
-    func fileUpload(fileData: Data, completion: @escaping (UploadRequest) -> ())
+    func fileUpload(flatform: String,
+                    registrant: String,
+                    version: String,
+                    uploadServer: String,
+                    appType: String,
+                    revisionHistory: String,
+                    fileData: Data, completion: @escaping (UploadRequest) -> ())
 }
