@@ -13,6 +13,7 @@ import Alamofire
 enum API {
     case pingCheck
     case fileUpload
+    case revisionHistory(String)
 }
 
 extension API : TargetType {
@@ -21,6 +22,7 @@ extension API : TargetType {
         #if DEBUG
         return URL(string: "http://45.76.220.229:8888")!
         #else
+        return URL(string: "http://45.76.220.229:8888")!
         #endif
     }
 
@@ -30,12 +32,14 @@ extension API : TargetType {
             return ""
         case .fileUpload:
             return "/api/v1/appfile/upload"
+        case .revisionHistory(let flatform):
+            return "/api/v1/appfile/\(flatform)"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .pingCheck:
+        case .pingCheck, .revisionHistory:
             return .get
         case .fileUpload:
             return .post
@@ -46,7 +50,7 @@ extension API : TargetType {
     
     public var parameter: Parameters {
         switch self {
-        case .pingCheck, .fileUpload:
+        case .pingCheck, .fileUpload, .revisionHistory:
             return [:]
 //        case .fileUpload(let appFile):
 //            return [
@@ -63,7 +67,7 @@ extension API : TargetType {
     
     var header: HTTPHeaders {
         switch self {
-        case .pingCheck, .fileUpload:
+        case .pingCheck, .fileUpload, .revisionHistory:
             return ["Content-Type" : "application/x-www-form-urlencoded"]
         }
     }
@@ -77,7 +81,7 @@ extension API: URLRequestConvertible {
         var urlRequest = try URLRequest(url: url, method: self.method, headers: self.header)
         
         switch self {
-        case .pingCheck:
+        case .pingCheck, .revisionHistory:
             urlRequest = try URLEncoding.default.encode(urlRequest, with: self.parameter)
             print("Router .\(self) URL : ", urlRequest)
         case .fileUpload:

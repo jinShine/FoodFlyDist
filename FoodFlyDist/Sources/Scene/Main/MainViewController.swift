@@ -124,12 +124,6 @@ class MainViewController: NSViewController {
         do {
             let fileUrl = URL(fileURLWithPath: uploadFilePath ?? "")
             let fileData = try Data(contentsOf: fileUrl)
-            
-            print(registrantTextField.stringValue)
-            print(versionTextField.stringValue)
-            print(uploadServerPopup.titleOfSelectedItem?.lowercased())
-            print((revisionHistoryTextField.documentView as! NSTextView).string)
-            print(flatformType)
 
             service.fileUpload(flatform: flatformType ?? "",
                                registrant: registrantTextField.stringValue,
@@ -150,6 +144,16 @@ class MainViewController: NSViewController {
             print("FILE OPTIONAL ERROR")
         }
     }
+    
+    @IBAction func cancelAction(_ sender: NSButton) {
+        detailInfoViewHeight.constant = 0
+        uploadProgressValue.stringValue = "0%"
+        uploadProgressbar.doubleValue = 0.0
+        uploadProgressbar.isHidden = true
+        uploadProgressValue.isHidden = true
+    }
+    
+    
 }
 
 // MARK:- Methods
