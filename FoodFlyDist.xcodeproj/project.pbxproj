@@ -10,6 +10,12 @@
 		44914CBA05ACA0EFC4642D2F /* Pods_FoodFlyDist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27830A7108AE389EA9FEBAE /* Pods_FoodFlyDist.framework */; };
 		5C030BCE2296F80A006A86BA /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C030BCD2296F80A006A86BA /* HistoryViewController.swift */; };
 		5C030BD022970007006A86BA /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C030BCF22970007006A86BA /* HistoryModel.swift */; };
+		5C030BD2229A7F3F006A86BA /* ChoiceProIpaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C030BD1229A7F3F006A86BA /* ChoiceProIpaView.swift */; };
+		5C030BD4229A802E006A86BA /* AutoDevIpaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C030BD3229A802E006A86BA /* AutoDevIpaView.swift */; };
+		5C030BD6229A805C006A86BA /* AutoProIpaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C030BD5229A805C006A86BA /* AutoProIpaView.swift */; };
+		5C030BD8229A80DC006A86BA /* ChoiceProApkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C030BD7229A80DC006A86BA /* ChoiceProApkView.swift */; };
+		5C030BDC229A8107006A86BA /* AutoProApkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C030BDB229A8107006A86BA /* AutoProApkView.swift */; };
+		5C030BDE229A8112006A86BA /* AutoDevApkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C030BDD229A8112006A86BA /* AutoDevApkView.swift */; };
 		5C896F6C22923A9300C035B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C896F6B22923A9300C035B2 /* AppDelegate.swift */; };
 		5C896F6E22923A9300C035B2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C896F6D22923A9300C035B2 /* MainViewController.swift */; };
 		5C896F7022923A9400C035B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C896F6F22923A9400C035B2 /* Assets.xcassets */; };
@@ -23,8 +29,8 @@
 		5C98F93522929FDC0083AB45 /* FFDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98F93422929FDC0083AB45 /* FFDService.swift */; };
 		5C98F9392292B2E90083AB45 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98F9382292B2E90083AB45 /* TargetType.swift */; };
 		5C98F9452293F5E00083AB45 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98F9442293F5E00083AB45 /* UIColor+Extension.swift */; };
-		5C98F94722950D000083AB45 /* IPADropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98F94622950D000083AB45 /* IPADropView.swift */; };
-		5C98F94922950D1E0083AB45 /* APKDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98F94822950D1E0083AB45 /* APKDropView.swift */; };
+		5C98F94722950D000083AB45 /* ChoiceDevIpaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98F94622950D000083AB45 /* ChoiceDevIpaView.swift */; };
+		5C98F94922950D1E0083AB45 /* ChoiceDevApkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C98F94822950D1E0083AB45 /* ChoiceDevApkView.swift */; };
 		A0307233E822949A8AA6656D /* Pods_FoodFlyDistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495308DB9C665A14BF8739ED /* Pods_FoodFlyDistTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +49,12 @@
 		495308DB9C665A14BF8739ED /* Pods_FoodFlyDistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodFlyDistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C030BCD2296F80A006A86BA /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		5C030BCF22970007006A86BA /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
+		5C030BD1229A7F3F006A86BA /* ChoiceProIpaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceProIpaView.swift; sourceTree = "<group>"; };
+		5C030BD3229A802E006A86BA /* AutoDevIpaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoDevIpaView.swift; sourceTree = "<group>"; };
+		5C030BD5229A805C006A86BA /* AutoProIpaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoProIpaView.swift; sourceTree = "<group>"; };
+		5C030BD7229A80DC006A86BA /* ChoiceProApkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceProApkView.swift; sourceTree = "<group>"; };
+		5C030BDB229A8107006A86BA /* AutoProApkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoProApkView.swift; sourceTree = "<group>"; };
+		5C030BDD229A8112006A86BA /* AutoDevApkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoDevApkView.swift; sourceTree = "<group>"; };
 		5C896F6822923A9300C035B2 /* FoodFlyDist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFlyDist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C896F6B22923A9300C035B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C896F6D22923A9300C035B2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -61,8 +73,8 @@
 		5C98F93422929FDC0083AB45 /* FFDService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFDService.swift; sourceTree = "<group>"; };
 		5C98F9382292B2E90083AB45 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		5C98F9442293F5E00083AB45 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		5C98F94622950D000083AB45 /* IPADropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPADropView.swift; sourceTree = "<group>"; };
-		5C98F94822950D1E0083AB45 /* APKDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APKDropView.swift; sourceTree = "<group>"; };
+		5C98F94622950D000083AB45 /* ChoiceDevIpaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceDevIpaView.swift; sourceTree = "<group>"; };
+		5C98F94822950D1E0083AB45 /* ChoiceDevApkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceDevApkView.swift; sourceTree = "<group>"; };
 		65D14D4A4253812586EE66D7 /* Pods-FoodFlyDistTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodFlyDistTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodFlyDistTests/Pods-FoodFlyDistTests.release.xcconfig"; sourceTree = "<group>"; };
 		AFEDAD0921B609A3A45C49A9 /* Pods-FoodFlyDistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodFlyDistTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodFlyDistTests/Pods-FoodFlyDistTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B27830A7108AE389EA9FEBAE /* Pods_FoodFlyDist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodFlyDist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +127,53 @@
 				5C030BCF22970007006A86BA /* HistoryModel.swift */,
 			);
 			path = History;
+			sourceTree = "<group>";
+		};
+		5C030BDF229A811E006A86BA /* DropView */ = {
+			isa = PBXGroup;
+			children = (
+				5C030BE3229A81B8006A86BA /* APK */,
+				5C030BE2229A81B3006A86BA /* IPA */,
+			);
+			path = DropView;
+			sourceTree = "<group>";
+		};
+		5C030BE0229A812D006A86BA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5C98F9442293F5E00083AB45 /* UIColor+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5C030BE1229A813B006A86BA /* Ping */ = {
+			isa = PBXGroup;
+			children = (
+				5C98F92C229263E00083AB45 /* SwiftyPing.swift */,
+			);
+			path = Ping;
+			sourceTree = "<group>";
+		};
+		5C030BE2229A81B3006A86BA /* IPA */ = {
+			isa = PBXGroup;
+			children = (
+				5C98F94622950D000083AB45 /* ChoiceDevIpaView.swift */,
+				5C030BD1229A7F3F006A86BA /* ChoiceProIpaView.swift */,
+				5C030BD3229A802E006A86BA /* AutoDevIpaView.swift */,
+				5C030BD5229A805C006A86BA /* AutoProIpaView.swift */,
+			);
+			path = IPA;
+			sourceTree = "<group>";
+		};
+		5C030BE3229A81B8006A86BA /* APK */ = {
+			isa = PBXGroup;
+			children = (
+				5C98F94822950D1E0083AB45 /* ChoiceDevApkView.swift */,
+				5C030BD7229A80DC006A86BA /* ChoiceProApkView.swift */,
+				5C030BDD229A8112006A86BA /* AutoDevApkView.swift */,
+				5C030BDB229A8107006A86BA /* AutoProApkView.swift */,
+			);
+			path = APK;
 			sourceTree = "<group>";
 		};
 		5C896F5F22923A9300C035B2 = {
@@ -209,10 +268,9 @@
 		5C98F92B229263C00083AB45 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				5C98F94622950D000083AB45 /* IPADropView.swift */,
-				5C98F94822950D1E0083AB45 /* APKDropView.swift */,
-				5C98F92C229263E00083AB45 /* SwiftyPing.swift */,
-				5C98F9442293F5E00083AB45 /* UIColor+Extension.swift */,
+				5C030BE1229A813B006A86BA /* Ping */,
+				5C030BE0229A812D006A86BA /* Extension */,
+				5C030BDF229A811E006A86BA /* DropView */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -419,14 +477,20 @@
 				5C896F6C22923A9300C035B2 /* AppDelegate.swift in Sources */,
 				5C98F9452293F5E00083AB45 /* UIColor+Extension.swift in Sources */,
 				5C030BCE2296F80A006A86BA /* HistoryViewController.swift in Sources */,
-				5C98F94922950D1E0083AB45 /* APKDropView.swift in Sources */,
+				5C030BD6229A805C006A86BA /* AutoProIpaView.swift in Sources */,
+				5C98F94922950D1E0083AB45 /* ChoiceDevApkView.swift in Sources */,
+				5C030BDC229A8107006A86BA /* AutoProApkView.swift in Sources */,
 				5C98F92D229263E00083AB45 /* SwiftyPing.swift in Sources */,
 				5C98F9272292526E0083AB45 /* App.swift in Sources */,
+				5C030BDE229A8112006A86BA /* AutoDevApkView.swift in Sources */,
 				5C98F92A229252B80083AB45 /* API.swift in Sources */,
 				5C896F8D22924E0E00C035B2 /* FFDServiceType.swift in Sources */,
-				5C98F94722950D000083AB45 /* IPADropView.swift in Sources */,
+				5C98F94722950D000083AB45 /* ChoiceDevIpaView.swift in Sources */,
 				5C98F93022926F330083AB45 /* ServiceState.swift in Sources */,
+				5C030BD4229A802E006A86BA /* AutoDevIpaView.swift in Sources */,
 				5C030BD022970007006A86BA /* HistoryModel.swift in Sources */,
+				5C030BD2229A7F3F006A86BA /* ChoiceProIpaView.swift in Sources */,
+				5C030BD8229A80DC006A86BA /* ChoiceProApkView.swift in Sources */,
 				5C98F93522929FDC0083AB45 /* FFDService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

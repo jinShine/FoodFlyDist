@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class IPADropView: NSView {
+class ChoiceProIpaView: NSView {
     
     // UI Property
     private let _imageView: NSImageView = {
@@ -49,7 +49,7 @@ class IPADropView: NSView {
         registerForDraggedTypes([NSPasteboard.PasteboardType.fileURL,
                                  NSPasteboard.PasteboardType.URL,
                                  NSPasteboard.PasteboardType.fileContents])
-    
+        
     }
     
     override func draw(_ dirtyRect: NSRect) {
@@ -103,8 +103,10 @@ class IPADropView: NSView {
                                         object: nil,
                                         userInfo: [
                                             "FilePath" : path,
-                                            "Flatform" : "ios"
-                                        ])
+                                            "Flatform" : "ios",
+                                            "appType" : "choice",
+                                            "appEnvironment" : "production"
+            ])
         
         self._imageView.image = NSImage(named: "ipa-file-upload")
         self.filePath = path
@@ -114,7 +116,7 @@ class IPADropView: NSView {
     }
 }
 
-extension IPADropView {
+extension ChoiceProIpaView {
     
     private func checkExtension(_ drag: NSDraggingInfo) -> Bool {
         guard let board = drag.draggingPasteboard.propertyList(forType: NSPasteboard.PasteboardType.init(rawValue: "NSFilenamesPboardType")) as? NSArray,

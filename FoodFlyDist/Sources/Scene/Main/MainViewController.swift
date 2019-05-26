@@ -9,14 +9,14 @@
 import Cocoa
 import SSZipArchive
 
-enum Choice {
-    case devIPA
-    case devAPK
-    case proIPA
-    case proAPK
-}
-
 class MainViewController: NSViewController {
+    
+    struct UI {
+        static let backgroundColor: NSColor = NSColor.RGBHex(hexValue: 0x444444)
+        static let environmentColor: NSColor = NSColor.RGBHex(hexValue: 0xDDDDDD)
+        static let detailViewHeight: CGFloat = 200
+        static let cornerRadiusValue: CGFloat = 10
+    }
     
     //MARK:- UI Properties
     
@@ -31,13 +31,13 @@ class MainViewController: NSViewController {
     //--ㄴ Development
     @IBOutlet weak var choiceDevBackground: NSView!
     @IBOutlet weak var choiceDevTitle: NSTextField!
-    @IBOutlet weak var choiceDevIPAView: IPADropView!
-    @IBOutlet weak var choiceDevAPKView: IPADropView!
+    @IBOutlet weak var choiceDevIPAView: ChoiceDevIpaView!
+    @IBOutlet weak var choiceDevAPKView: ChoiceDevApkView!
     //--ㄴ Production
     @IBOutlet weak var choiceProBackground: NSView!
     @IBOutlet weak var choiceProTitle: NSTextField!
-    @IBOutlet weak var choiceProIPAView: IPADropView!
-    @IBOutlet weak var choiceProAPKView: IPADropView!
+    @IBOutlet weak var choiceProIPAView: ChoiceProIpaView!
+    @IBOutlet weak var choiceProAPKView: ChoiceProApkView!
     
     
     /*
@@ -48,26 +48,17 @@ class MainViewController: NSViewController {
     //--ㄴ Development
     @IBOutlet weak var autoDevBackground: NSView!
     @IBOutlet weak var autoDevTitle: NSTextField!
-    @IBOutlet weak var autoDevIPAView: IPADropView!
-    @IBOutlet weak var autoDevAPKView: IPADropView!
+    @IBOutlet weak var autoDevIPAView: AutoDevIpaView!
+    @IBOutlet weak var autoDevAPKView: AutoDevApkView!
     //--ㄴ Production
     @IBOutlet weak var autoProBackground: NSView!
     @IBOutlet weak var autoProTitle: NSTextField!
-    @IBOutlet weak var autoProIPAView: IPADropView!
-    @IBOutlet weak var autoProAPKView: IPADropView!
-    
-    
-    
-    
-    
-    @IBOutlet weak var uploadButton: NSButton!
-    
-    
-    
-    
+    @IBOutlet weak var autoProIPAView: AutoProIpaView!
+    @IBOutlet weak var autoProAPKView: AutoProApkView!
     
     @IBOutlet weak var uploadProgressbar: NSProgressIndicator!
     @IBOutlet weak var uploadProgressValue: NSTextField!
+    
     
     /*
      Detail Infomation View
@@ -80,6 +71,9 @@ class MainViewController: NSViewController {
     @IBOutlet weak var uploadServerPopup: NSPopUpButton!
     @IBOutlet weak var revisionHistoryTextField: NSScrollView!
     
+    //업로드 버튼
+    @IBOutlet weak var uploadButton: NSButton!
+    
     
     //MARK:- Properties
     
@@ -87,6 +81,9 @@ class MainViewController: NSViewController {
     let service: FFDService = FFDService()
     var uploadFilePath: String?
     var flatformType: String?
+    var fileVersion: String?
+    var appType: String?
+    var appEnvironment: String?
     
     
     
@@ -121,6 +118,7 @@ class MainViewController: NSViewController {
     //MARK:- Actions
     
     @IBAction func fileUpload(_ sender: NSButton) {
+        
         do {
             let fileUrl = URL(fileURLWithPath: uploadFilePath ?? "")
             let fileData = try Data(contentsOf: fileUrl)
@@ -129,7 +127,7 @@ class MainViewController: NSViewController {
                                registrant: registrantTextField.stringValue,
                                version: versionTextField.stringValue,
                                uploadServer: uploadServerPopup.titleOfSelectedItem?.lowercased() ?? "",
-                               appType: "auto",
+                               appType: self.appType ?? "",
                                revisionHistory: (revisionHistoryTextField.documentView as! NSTextView).string,
                                fileData: fileData) { result in
                 result.uploadProgress(closure: { progress in
@@ -162,49 +160,45 @@ extension MainViewController {
     
     private func setupUI() {
         view.wantsLayer = true
-        view.layer?.backgroundColor = NSColor.RGBHex(hexValue: 0x444444).cgColor
+        view.layer?.backgroundColor = UI.backgroundColor.cgColor
         
         choiceRiderContainer.wantsLayer = true
         choiceRiderContainer.layer?.backgroundColor = .white
-        choiceRiderContainer.layer?.cornerRadius = 10
+        choiceRiderContainer.layer?.cornerRadius = UI.cornerRadiusValue
         
         choiceTitle.wantsLayer = true
         choiceTitle.textColor = .black
         
         choiceDevBackground.wantsLayer = true
-        choiceDevBackground.layer?.backgroundColor = NSColor.RGBHex(hexValue: 0xDDDDDD).cgColor
+        choiceDevBackground.layer?.backgroundColor = UI.environmentColor.cgColor
         choiceDevIPAView.image = NSImage(named: "ipa-file")
         choiceDevIPAView.title = "ipa파일 끌어넣기"
         choiceDevAPKView.image = NSImage(named: "apk-file")
         choiceDevAPKView.title = "apk파일 끌어넣기"
         
         choiceProBackground.wantsLayer = true
-        choiceProBackground.layer?.backgroundColor = NSColor.RGBHex(hexValue: 0xDDDDDD).cgColor
+        choiceProBackground.layer?.backgroundColor = UI.environmentColor.cgColor
         choiceProIPAView.image = NSImage(named: "ipa-file")
         choiceProIPAView.title = "ipa파일 끌어넣기"
         choiceProAPKView.image = NSImage(named: "apk-file")
         choiceProAPKView.title = "apk파일 끌어넣기"
         
-        
-        
-        
-        
         autoRiderContainer.wantsLayer = true
         autoRiderContainer.layer?.backgroundColor = .white
-        autoRiderContainer.layer?.cornerRadius = 10
+        autoRiderContainer.layer?.cornerRadius = UI.cornerRadiusValue
         
         autoTitle.wantsLayer = true
         autoTitle.textColor = .black
         
         autoDevBackground.wantsLayer = true
-        autoDevBackground.layer?.backgroundColor = NSColor.RGBHex(hexValue: 0xDDDDDD).cgColor
+        autoDevBackground.layer?.backgroundColor = UI.environmentColor.cgColor
         autoDevIPAView.image = NSImage(named: "ipa-file")
         autoDevIPAView.title = "ipa파일 끌어넣기"
         autoDevAPKView.image = NSImage(named: "apk-file")
         autoDevAPKView.title = "apk파일 끌어넣기"
         
         autoProBackground.wantsLayer = true
-        autoProBackground.layer?.backgroundColor = NSColor.RGBHex(hexValue: 0xDDDDDD).cgColor
+        autoProBackground.layer?.backgroundColor = UI.environmentColor.cgColor
         autoProIPAView.image = NSImage(named: "ipa-file")
         autoProIPAView.title = "ipa파일 끌어넣기"
         autoProAPKView.image = NSImage(named: "apk-file")
@@ -214,7 +208,7 @@ extension MainViewController {
         // Detail Info
         uploadServerPopup.wantsLayer = true
         uploadServerPopup.removeAllItems()
-        uploadServerPopup.addItems(withTitles: ["Development","Production"])
+        uploadServerPopup.addItems(withTitles: ["development","production"])
          
         uploadButton.isEnabled = false
         uploadButton.isHighlighted = true
@@ -223,11 +217,16 @@ extension MainViewController {
     private func setupDetailInfoView() {
         detailInfoView.wantsLayer = true
         detailInfoView.layer?.backgroundColor = NSColor.clear.cgColor
-        detailInfoView.layer?.cornerRadius = 10
+        detailInfoView.layer?.cornerRadius = UI.cornerRadiusValue
+        
+        uploadButton.isEnabled = true
+        uploadButton.isHighlighted = false
+        uploadProgressbar.isHidden = false
+        uploadProgressValue.isHidden = false
         
         NSAnimationContext.runAnimationGroup { _ in
             NSAnimationContext.current.duration = 5.0
-            detailInfoViewHeight.constant = 200
+            detailInfoViewHeight.constant = UI.detailViewHeight
         }
     }
 
@@ -258,36 +257,70 @@ extension MainViewController {
     @objc private func getDropFileInfo(noti: Notification) {
         
         setupDetailInfoView()
-        uploadButton.isEnabled = true
-        uploadButton.isHighlighted = false
-        uploadProgressbar.isHidden = false
-        uploadProgressValue.isHidden = false
-        
+
         guard let userInfo = noti.userInfo,
         let filePath = userInfo["FilePath"] as? String,
-        let flatform = userInfo["Flatform"] as? String else { return }
-        uploadFilePath = filePath
-        flatformType = flatform
+        let flatform = userInfo["Flatform"] as? String,
+        let appType = userInfo["appType"] as? String,
+        let appEnvironment = userInfo["appEnvironment"] as? String else { return }
+        self.uploadFilePath = filePath
+        self.flatformType = flatform
+        self.appType = appType
+        self.appEnvironment = appEnvironment
         
-        // ipa 파일을 UnZip을 하면 Payload폴더가 생김(정보를 가져올수 있음)
-        let unZipPath = tempUnZipPath(from: filePath)
-
-        let success: Bool = SSZipArchive.unzipFile(atPath: filePath, toDestination: unZipPath)
-        if success {
-            print(unZipPath + "Payload")
-            print("Success UnZip")
-        } else {
-            print("Fail UnZip")
+        self.appType = appType
+        uploadServerPopup.selectItem(withTitle: appEnvironment)
+        
+        
+        if flatform == "ios" {
+            extractIpaInfomation(from: filePath)
         }
-        
     }
     
-    func tempUnZipPath(from filePath: String) -> String {
+    private func tempUnZipPath(from filePath: String) -> String {
         let fileURLPath = URL(fileURLWithPath: filePath).deletingLastPathComponent()
         let encodingPath = fileURLPath.absoluteString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         if let path = encodingPath?.components(separatedBy: "file://").last {
             return path
         }
         return ""
+    }
+    
+    private func extractIpaInfomation(from filePath: String) {
+        let fileName: NSString = (filePath as NSString).lastPathComponent as NSString
+        let deleteExtensionFileName = fileName.deletingPathExtension
+        
+        // ipa 파일을 UnZip을 하면 Payload폴더가 생김(정보를 가져올수 있음)
+        let unZipPath = tempUnZipPath(from: filePath)
+        
+        let success: Bool = SSZipArchive.unzipFile(atPath: filePath, toDestination: unZipPath)
+        if success {
+            print("Success UnZip")
+            print("getDropFileInfo :", unZipPath + "Payload/" + "\(deleteExtensionFileName).app/info.plist")
+            let plistPath = unZipPath + "Payload/" + "\(deleteExtensionFileName).app/info.plist"
+            versionTextField.stringValue = getPlistInfomation(from: plistPath)
+            removePayloadDir(from: unZipPath)
+        } else {
+            print("Fail UnZip")
+        }
+    }
+    
+    private func getPlistInfomation(from filePath: String) -> String {
+        do {
+            let plistData = try Data(contentsOf: URL(fileURLWithPath: filePath))
+            let result = try PropertyListSerialization.propertyList(from: plistData, options: [], format: nil) as? [String: Any]
+            let bundleShortVersion = result?["CFBundleShortVersionString"] as? String ?? ""
+            let bundleVersion = result?["CFBundleVersion"] as? String ?? ""
+            let version = bundleShortVersion + "(\(bundleVersion))"
+            return version
+        } catch {
+            print("getPlistInfomation Error")
+        }
+        return ""
+    }
+    
+    private func removePayloadDir(from unZipPath: String) {
+        do { try FileManager.default.removeItem(atPath: unZipPath + "Payload") }
+        catch { print("getDropFileInfo FileManager Error") }
     }
 }

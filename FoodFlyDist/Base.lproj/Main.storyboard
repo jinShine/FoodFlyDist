@@ -772,19 +772,19 @@ DOWNLOAD CENTER</string>
                                             <constraint firstAttribute="height" constant="35" id="qwb-Nz-qrA"/>
                                         </constraints>
                                     </customView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="XaU-ip-2Rx" customClass="IPADropView" customModule="FoodFlyDist" customModuleProvider="target">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="XaU-ip-2Rx" customClass="ChoiceDevIpaView" customModule="FoodFlyDist" customModuleProvider="target">
                                         <rect key="frame" x="20" y="215" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="XaU-ip-2Rx" secondAttribute="height" multiplier="1:1" id="bLQ-Y1-xXw"/>
                                         </constraints>
                                     </customView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="IPO-fs-Pva" customClass="IPADropView" customModule="FoodFlyDist" customModuleProvider="target">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="IPO-fs-Pva" customClass="ChoiceProIpaView" customModule="FoodFlyDist" customModuleProvider="target">
                                         <rect key="frame" x="20" y="20" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="IPO-fs-Pva" secondAttribute="height" multiplier="1:1" id="GoX-0D-mUY"/>
                                         </constraints>
                                     </customView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Mu5-2q-Pdq" customClass="APKDropView" customModule="FoodFlyDist" customModuleProvider="target">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Mu5-2q-Pdq" customClass="ChoiceDevApkView" customModule="FoodFlyDist" customModuleProvider="target">
                                         <rect key="frame" x="160" y="215" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Mu5-2q-Pdq" secondAttribute="height" multiplier="1:1" id="bro-GW-Vqb"/>
@@ -808,7 +808,7 @@ DOWNLOAD CENTER</string>
                                             <constraint firstItem="mnN-OC-sPq" firstAttribute="centerX" secondItem="pvy-jQ-6Pg" secondAttribute="centerX" id="zbk-id-Sdf"/>
                                         </constraints>
                                     </customView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="EJ2-IO-CDr" customClass="APKDropView" customModule="FoodFlyDist" customModuleProvider="target">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="EJ2-IO-CDr" customClass="ChoiceProApkView" customModule="FoodFlyDist" customModuleProvider="target">
                                         <rect key="frame" x="160" y="20" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="EJ2-IO-CDr" secondAttribute="height" multiplier="1:1" id="Xgk-si-e4F"/>
@@ -883,13 +883,13 @@ DOWNLOAD CENTER</string>
                                             <constraint firstItem="0B8-Tc-R3U" firstAttribute="centerY" secondItem="mmO-7g-QPo" secondAttribute="centerY" id="k84-Ns-AYg"/>
                                         </constraints>
                                     </customView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="fmp-U7-02K" customClass="IPADropView" customModule="FoodFlyDist" customModuleProvider="target">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="fmp-U7-02K" customClass="AutoDevIpaView" customModule="FoodFlyDist" customModuleProvider="target">
                                         <rect key="frame" x="20" y="215" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="fmp-U7-02K" secondAttribute="height" multiplier="1:1" id="ktQ-Dl-0ZW"/>
                                         </constraints>
                                     </customView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="MbK-oe-V9E" customClass="APKDropView" customModule="FoodFlyDist" customModuleProvider="target">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="MbK-oe-V9E" customClass="AutoDevApkView" customModule="FoodFlyDist" customModuleProvider="target">
                                         <rect key="frame" x="160" y="215" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="MbK-oe-V9E" secondAttribute="height" multiplier="1:1" id="Vl6-5X-P9C"/>
@@ -913,10 +913,10 @@ DOWNLOAD CENTER</string>
                                             <constraint firstAttribute="height" constant="35" id="uvD-kQ-ukf"/>
                                         </constraints>
                                     </customView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="xLe-tG-Lsp" customClass="IPADropView" customModule="FoodFlyDist" customModuleProvider="target">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="xLe-tG-Lsp" customClass="AutoProIpaView" customModule="FoodFlyDist" customModuleProvider="target">
                                         <rect key="frame" x="20" y="20" width="120" height="120"/>
                                     </customView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="HWU-1T-Q98" customClass="APKDropView" customModule="FoodFlyDist" customModuleProvider="target">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="HWU-1T-Q98" customClass="AutoProApkView" customModule="FoodFlyDist" customModuleProvider="target">
                                         <rect key="frame" x="160" y="20" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="HWU-1T-Q98" secondAttribute="height" multiplier="1:1" id="kam-vL-fea"/>
@@ -1059,15 +1059,15 @@ Gw
                                     <scrollView verticalHuggingPriority="249" verticalCompressionResistancePriority="752" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kn0-hp-HZU">
                                         <rect key="frame" x="0.0" y="10" width="650" height="88"/>
                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="k3I-ca-wC1">
-                                            <rect key="frame" x="0.0" y="0.0" width="650" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="635" height="88"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="hGg-WN-w2v">
-                                                    <rect key="frame" x="0.0" y="0.0" width="650" height="88"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="635" height="88"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    <size key="minSize" width="650" height="88"/>
+                                                    <size key="minSize" width="635" height="88"/>
                                                     <size key="maxSize" width="660" height="10000000"/>
                                                     <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 </textView>
@@ -1081,7 +1081,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="rnW-AZ-wEi">
-                                            <rect key="frame" x="634" y="0.0" width="16" height="88"/>
+                                            <rect key="frame" x="635" y="0.0" width="15" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>

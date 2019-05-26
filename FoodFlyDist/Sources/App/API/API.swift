@@ -44,24 +44,12 @@ extension API : TargetType {
         case .fileUpload:
             return .post
         }
-        
-        
     }
     
     public var parameter: Parameters {
         switch self {
         case .pingCheck, .fileUpload, .revisionHistory:
             return [:]
-//        case .fileUpload(let appFile):
-//            return [
-//                "flatform_type" : "ios",
-//                "version" : "1.0.0",
-//                "revision_history" : "revision history area",
-//                "registrant" : "admin",
-//                "app_type" : "auto",
-//                "appfile" : appFile,
-//                "app_environment" : "development"
-//            ]
         }
     }
     
@@ -83,10 +71,11 @@ extension API: URLRequestConvertible {
         switch self {
         case .pingCheck, .revisionHistory:
             urlRequest = try URLEncoding.default.encode(urlRequest, with: self.parameter)
-            print("Router .\(self) URL : ", urlRequest)
         case .fileUpload:
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
         }
+        print("Router .\(self) URL : ", urlRequest)
+        
         return urlRequest
     }
 }

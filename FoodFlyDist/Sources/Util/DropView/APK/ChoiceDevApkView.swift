@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class APKDropView: NSView {
+class ChoiceDevApkView: NSView {
     
     // UI Property
     private let _imageView: NSImageView = {
@@ -52,7 +52,6 @@ class APKDropView: NSView {
         registerForDraggedTypes([NSPasteboard.PasteboardType.fileURL,
                                  NSPasteboard.PasteboardType.URL,
                                  NSPasteboard.PasteboardType.fileContents])
-        
     }
     
     override func draw(_ dirtyRect: NSRect) {
@@ -106,8 +105,10 @@ class APKDropView: NSView {
                                         object: nil,
                                         userInfo: [
                                             "FilePath" : path,
-                                            "Flatform" : "android"
-                                        ])
+                                            "Flatform" : "android",
+                                            "appType" : "choice",
+                                            "appEnvironment" : "development"
+            ])
         
         self._imageView.image = NSImage(named: "apk-file-upload")
         self.filePath = path
@@ -117,7 +118,7 @@ class APKDropView: NSView {
     }
 }
 
-extension APKDropView {
+extension ChoiceDevApkView {
     
     private func checkExtension(_ drag: NSDraggingInfo) -> Bool {
         guard let board = drag.draggingPasteboard.propertyList(forType: NSPasteboard.PasteboardType.init(rawValue: "NSFilenamesPboardType")) as? NSArray,
