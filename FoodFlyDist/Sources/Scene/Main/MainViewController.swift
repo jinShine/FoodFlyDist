@@ -271,7 +271,6 @@ extension MainViewController {
         self.appType = appType
         uploadServerPopup.selectItem(withTitle: appEnvironment)
         
-        
         if flatform == "ios" {
             extractIpaInfomation(from: filePath)
         }
