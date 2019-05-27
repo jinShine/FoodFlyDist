@@ -104,7 +104,7 @@ class ChoiceDevIpaView: NSView {
                                         userInfo: [
                                             "FilePath" : path,
                                             "Flatform" : "ios",
-                                            "appType" : "choice",
+                                            "appType" : "manual",
                                             "appEnvironment" : "development"
                                         ])
         

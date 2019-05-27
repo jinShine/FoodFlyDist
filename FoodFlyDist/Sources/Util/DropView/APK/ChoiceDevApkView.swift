@@ -106,7 +106,7 @@ class ChoiceDevApkView: NSView {
                                         userInfo: [
                                             "FilePath" : path,
                                             "Flatform" : "android",
-                                            "appType" : "choice",
+                                            "appType" : "manual",
                                             "appEnvironment" : "development"
             ])
         

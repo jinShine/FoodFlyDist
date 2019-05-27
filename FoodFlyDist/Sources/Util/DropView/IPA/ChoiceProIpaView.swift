@@ -104,7 +104,7 @@ class ChoiceProIpaView: NSView {
                                         userInfo: [
                                             "FilePath" : path,
                                             "Flatform" : "ios",
-                                            "appType" : "choice",
+                                            "appType" : "manual",
                                             "appEnvironment" : "production"
             ])
         
