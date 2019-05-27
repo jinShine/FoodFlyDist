@@ -234,7 +234,7 @@ extension MainViewController {
         if result {
             ping?.observer = { (_, response) in
                 let duration = response.duration
-                print(duration)
+                print("업로드 가능 :", duration)
                 ping?.stop()
             }
             self.serviceStatus = .connected
